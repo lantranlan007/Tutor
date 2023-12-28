@@ -4,5 +4,5 @@
 /**
  * 
  */
-module HelloWorld {
+module Tutor {
 }

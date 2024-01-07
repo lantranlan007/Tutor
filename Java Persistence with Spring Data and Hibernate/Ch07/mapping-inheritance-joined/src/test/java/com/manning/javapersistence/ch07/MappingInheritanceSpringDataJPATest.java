@@ -69,3 +69,5 @@ public class MappingInheritanceSpringDataJPATest {
 
     }
 }
+
+//https://docs.google.com/document/d/1jAUx3ROkXXCO2BwqzITw3JSomjkZQq8FQztygAzr_Eg/edit?usp=sharing

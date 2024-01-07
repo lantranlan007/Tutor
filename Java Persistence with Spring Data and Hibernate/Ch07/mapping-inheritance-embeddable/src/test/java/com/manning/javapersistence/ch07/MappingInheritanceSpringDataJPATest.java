@@ -38,25 +38,26 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {SpringDataConfiguration.class})
+@ContextConfiguration(classes = { SpringDataConfiguration.class })
 public class MappingInheritanceSpringDataJPATest {
 
-    @Autowired
-    private ItemRepository itemRepository;
+	@Autowired
+	private ItemRepository itemRepository;
 
-    @Test
-    void storeLoadEntities() {
+	@Test
+	void storeLoadEntities() {
 
-        Item item = new Item("Item 1", Dimensions.centimeters(BigDecimal.ONE, BigDecimal.ONE, BigDecimal.ONE), Weight.kilograms(BigDecimal.ONE));
-        itemRepository.save(item);
+		Item item = new Item("Item 1", 
+				Dimensions.centimeters(BigDecimal.ONE, BigDecimal.ONE, BigDecimal.ONE),
+				Weight.kilograms(BigDecimal.ONE));
+		itemRepository.save(item);
 
-        List<Item> items = itemRepository.findAll();
+		List<Item> items = itemRepository.findAll();
 
-        assertAll(
-                () -> assertEquals(1, items.size()),
-                () -> assertEquals("Item 1", items.get(0).getName())
-        );
+		assertAll(() -> assertEquals(1, items.size()), () -> assertEquals("Item 1", items.get(0).getName()));
 
-    }
+	}
 
 }
+
+//https://docs.google.com/document/d/1nQkycNSFt5ouGe9rqyMpkkV36P4bZxL7bxG4a7rS9GM/edit?usp=sharing

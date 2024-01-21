@@ -8,3 +8,6 @@ https://drive.google.com/file/d/1w-0c2BovRoJthZTQkxJMjcGw7FgJSMKu/view?usp=drive
 
 introduction.to.java.programming.comprehensive.8th.edition.pdf
 https://drive.google.com/file/d/18qIWYGk9nfYDqO8LgMrfc1zPxGj3t8M4/view?usp=drivesdk
+
+Chapter 27 GRAPHS AND APPLICATIONS
+https://drive.google.com/drive/folders/1ygLrD8KCdHlQONoem7mrYAyuoK3EOGRT

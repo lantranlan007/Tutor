@@ -1,3 +1,5 @@
+https://docs.google.com/document/d/1v6GtNm-hnnwTdJmsPoiR02iR2uywu0uOaSlzgSDYd6g/edit?usp=sharing
+
 https://drive.google.com/drive/folders/1rfKhPZcFJbIULUps4obMXiljs5obkFGG?usp=sharing
 
 https://drive.google.com/file/d/1aTMORUcDuRnXSX1771YINwvBwSn04XU3/view?usp=drivesdk

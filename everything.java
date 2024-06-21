@@ -10,6 +10,46 @@ import java.lang.annotation.Target;
 public @interface LogExecutionTime {
 }
 
+public class MyClass {
+
+    @LogExecutionTime
+    public void performTask() {
+        // Method logic goes here
+        System.out.println("Task performed.");
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.performTask(); // This method will be annotated and logged for execution time
+    }
+}
+
+import java.lang.reflect.Method;
+
+public class MyAspect {
+
+    public void logExecutionTime(Object obj) {
+        Class<?> clazz = obj.getClass();
+        for (Method method : clazz.getDeclaredMethods()) {
+            if (method.isAnnotationPresent(LogExecutionTime.class)) {
+                long startTime = System.currentTimeMillis();
+                try {
+                    method.invoke(obj);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                long endTime = System.currentTimeMillis();
+                System.out.println("Method " + method.getName() + " executed in " + (endTime - startTime) + "ms");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        MyAspect aspect = new MyAspect();
+        aspect.logExecutionTime(obj); // This will log execution time for annotated methods
+    }
+}
 
 <mat-card class="example-card">
   <mat-card-header>

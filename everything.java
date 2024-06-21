@@ -51,6 +51,63 @@ public class MyAspect {
     }
 }
 
+Give me an example of custom annotation in java on field
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.FIELD) // Annotation applicable to fields
+@Retention(RetentionPolicy.RUNTIME) // Annotation retained at runtime
+public @interface MyFieldAnnotation {
+    String message() default "This field is annotated";
+}
+
+public class MyClass {
+
+    @MyFieldAnnotation(message = "Custom message for myField")
+    private String myField;
+
+    @MyFieldAnnotation
+    private int anotherField;
+
+    public MyClass(String myField, int anotherField) {
+        this.myField = myField;
+        this.anotherField = anotherField;
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass("Hello, World!", 42);
+        AnnotationProcessor.processAnnotations(obj); // Process annotated fields
+    }
+}
+
+import java.lang.reflect.Field;
+
+public class AnnotationProcessor {
+
+    public static void processAnnotations(Object obj) {
+        Class<?> clazz = obj.getClass();
+        for (Field field : clazz.getDeclaredFields()) {
+            if (field.isAnnotationPresent(MyFieldAnnotation.class)) {
+                MyFieldAnnotation annotation = field.getAnnotation(MyFieldAnnotation.class);
+                field.setAccessible(true);
+                try {
+                    Object value = field.get(obj);
+                    System.out.println("Field " + field.getName() + " is annotated with @MyFieldAnnotation");
+                    System.out.println("Message: " + annotation.message());
+                    System.out.println("Value: " + value);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+
+
+
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>

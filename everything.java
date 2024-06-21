@@ -1,4 +1,4 @@
-Give me a very simple example of custom annotation in java
+Give me a very simple example of custom annotation in java:
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

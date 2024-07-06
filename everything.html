@@ -33,3 +33,109 @@
   background-image: url('https://via.placeholder.com/40');
   background-size: cover;
 }
+
+To implement drag and drop functionality in Angular, you can use the Angular CDK (Component Dev Kit), which provides a set of high-quality, well-tested UI components for Angular applications.
+
+Here's a step-by-step guide to implementing drag and drop in Angular using Angular CDK:
+
+1. **Install Angular CDK**:
+   First, you need to install Angular CDK. You can do this by running the following command:
+   ```bash
+   npm install @angular/cdk
+   ```
+
+2. **Import DragDropModule**:
+   Import `DragDropModule` in your application module.
+   ```typescript
+   import { BrowserModule } from '@angular/platform-browser';
+   import { NgModule } from '@angular/core';
+   import { AppComponent } from './app.component';
+   import { DragDropModule } from '@angular/cdk/drag-drop';
+
+   @NgModule({
+     declarations: [
+       AppComponent
+     ],
+     imports: [
+       BrowserModule,
+       DragDropModule
+     ],
+     providers: [],
+     bootstrap: [AppComponent]
+   })
+   export class AppModule { }
+   ```
+
+3. **Implement Drag and Drop in a Component**:
+   Create a component and use the Angular CDK drag and drop directives to add drag and drop functionality.
+
+   ```typescript
+   import { Component } from '@angular/core';
+   import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+
+   @Component({
+     selector: 'app-drag-drop',
+     template: `
+       <div class="example-container">
+         <h2>Drag and Drop List</h2>
+         <div cdkDropList (cdkDropListDropped)="drop($event)">
+           <div class="example-box" *ngFor="let item of items" cdkDrag>{{item}}</div>
+         </div>
+       </div>
+     `,
+     styles: [`
+       .example-container {
+         width: 400px;
+         max-width: 100%;
+         margin: 0 auto;
+       }
+       .example-box {
+         padding: 20px;
+         margin-bottom: 10px;
+         background: #fff;
+         border: solid 1px #ccc;
+         border-radius: 4px;
+         cursor: move;
+       }
+     `]
+   })
+   export class DragDropComponent {
+     items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+
+     drop(event: CdkDragDrop<string[]>) {
+       moveItemInArray(this.items, event.previousIndex, event.currentIndex);
+     }
+   }
+   ```
+
+4. **Use the Component**:
+   Add the `DragDropComponent` selector in your application template to use the drag and drop functionality.
+
+   ```typescript
+   import { NgModule } from '@angular/core';
+   import { BrowserModule } from '@angular/platform-browser';
+   import { AppComponent } from './app.component';
+   import { DragDropComponent } from './drag-drop/drag-drop.component';
+   import { DragDropModule } from '@angular/cdk/drag-drop';
+
+   @NgModule({
+     declarations: [
+       AppComponent,
+       DragDropComponent
+     ],
+     imports: [
+       BrowserModule,
+       DragDropModule
+     ],
+     providers: [],
+     bootstrap: [AppComponent]
+   })
+   export class AppModule { }
+   ```
+
+   ```html
+   <!-- app.component.html -->
+   <app-drag-drop></app-drag-drop>
+   ```
+
+Now, when you run your Angular application, you should see a list of items that you can drag and drop to reorder.

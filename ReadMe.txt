@@ -1,3 +1,18 @@
+Đẳng sâm	15g
+2	Hoài sơn	22g
+3	Phục linh	22g
+4	Thổ phục linh	16g
+5	Bạch truật	15g
+6	Trạch tả	12g
+7 Phục thần	10g
+8	Táo nhân	8g
+9 Đỗ trọng	8g
+10	Ngưu tất	8g
+11	Tục đoạn	6g
+ Mua 500g ý dĩ , khiếm thực 
+
+
+
 https://youtu.be/kl_h4YqtCTA
 
 https://drive.google.com/file/d/1PVoi76d3ZCKYtg7SvZJzieVZ5IqwHAxT/view?usp=drivesdk

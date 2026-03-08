@@ -38,6 +38,10 @@ Verify Docker is installed
 
 docker --version
 
+Test with a real container
+
+sudo docker run hello-world
+
 
 Đẳng sâm	15g
 2	Hoài sơn	22g

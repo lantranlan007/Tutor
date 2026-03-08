@@ -42,6 +42,9 @@ Test with a real container
 
 sudo docker run hello-world
 
+docker run --rm -v $(pwd):/downloads ghcr.io/yt-dlp/yt-dlp https://youtu.be/kl_h4YqtCTA
+
+
 
 Đẳng sâm	15g
 2	Hoài sơn	22g

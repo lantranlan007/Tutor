@@ -1,3 +1,23 @@
+
+
+Remove old Docker versions
+
+sudo apt remove docker docker-engine docker.io containerd runc
+
+sudo apt update
+sudo apt upgrade -y
+
+Install required packages
+
+sudo apt install -y \
+  ca-certificates \
+  curl \
+  gnupg \
+  lsb-release
+
+
+
+
 Đẳng sâm	15g
 2	Hoài sơn	22g
 3	Phục linh	22g

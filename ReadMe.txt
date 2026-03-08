@@ -50,6 +50,8 @@ sudo apt update
 sudo apt install yt-dlp
 yt-dlp https://youtu.be/kl_h4YqtCTA
 
+yt-dlp -f "bv*+ba/b" https://youtu.be/kl_h4YqtCTA
+
 
 Đẳng sâm	15g
 2	Hoài sơn	22g

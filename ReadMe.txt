@@ -46,6 +46,9 @@ docker pull ghcr.io/yt-dlp/yt-dlp:latest
 
 docker run --rm -v $(pwd):/downloads ghcr.io/yt-dlp/yt-dlp https://youtu.be/kl_h4YqtCTA
 
+sudo apt update
+sudo apt install yt-dlp
+yt-dlp https://youtu.be/kl_h4YqtCTA
 
 
 Đẳng sâm	15g

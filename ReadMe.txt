@@ -42,6 +42,8 @@ Test with a real container
 
 sudo docker run hello-world
 
+docker pull ghcr.io/yt-dlp/yt-dlp:latest
+
 docker run --rm -v $(pwd):/downloads ghcr.io/yt-dlp/yt-dlp https://youtu.be/kl_h4YqtCTA
 
 

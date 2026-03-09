@@ -1,3 +1,17 @@
+
+https://youtu.be/On6V1cjIUpw?si=HkMYT2Tu-paP3WpH
+
+https://youtu.be/PffT7MK-ny0?si=gc7-_hfdDVMTfBkZ
+
+https://youtu.be/vFJrgIv2tX4?si=i0KXb9uPLqbL1Pgj
+
+https://youtu.be/g1EuO0mHn1E?si=JXi4-lElTrJyto3m
+
+https://youtu.be/jJ2jKHQ3E3Q?si=D5sKzIESD3LZberM
+
+https://youtu.be/LaWlIssdhrU?si=lDrf7tBmOzvSh24o
+
+
 yt-dlp --cookies-from-browser firefox "URL"
 
 yt-dlp --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" "URL"

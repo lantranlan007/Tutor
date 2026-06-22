@@ -1,6 +1,8 @@
 
 ngrok config add-authtoken 4FRz6vckwVZBColWE81tOUwQvX1_3r7ZCcojG4zcvjv4oH6cR
 
+ngrok http 8080
+
 src/main/java/com/example/helloweb/HelloController.java
 
 package com.example.helloweb;

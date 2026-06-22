@@ -16,6 +16,7 @@ public class HelloController {
 }
 
 
+mvn spring-boot:run
 
 
 https://youtu.be/On6V1cjIUpw?si=HkMYT2Tu-paP3WpH

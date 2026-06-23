@@ -1,4 +1,9 @@
 
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEtcc9oIe5zbIJDcbpMTNR+rWpZtN7FIJLpyB7EJ6K51
+
+
+
 Start-Service sshd
 
 Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*'

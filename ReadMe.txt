@@ -1,3 +1,8 @@
+
+Test the Connection
+ssh -T git@github.com
+
+
 https://lazy-gatherer-barracuda.ngrok-free.dev/github-webhook/
 app/json
 noneedsecret

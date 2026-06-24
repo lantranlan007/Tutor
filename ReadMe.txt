@@ -1,3 +1,8 @@
+https://lazy-gatherer-barracuda.ngrok-free.dev/github-webhook/
+app/json
+noneedsecret
+ssldisable
+
 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1
 
 https://lazy-gatherer-barracuda.ngrok-free.dev
@@ -16,7 +21,7 @@ Start-Service sshd
 
 Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*'
 
-ngrok config add-authtoken 4FRz6vckwVZBColWE81tOUwQvX1_3r7ZCcojG4zcvjv4oH6cR
+ngrok config add-authtoken 3FRz6vckwVZBColWE81tOUwQvX1_3r7ZCcojG4zcvjv4oH6cRe
 
 ngrok http 8080
 

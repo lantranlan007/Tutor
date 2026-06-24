@@ -1,3 +1,10 @@
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/lantranlan007/hello-world.git
+git push -u origin main
+
 
 Test the Connection
 ssh -T git@github.com

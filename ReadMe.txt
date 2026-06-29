@@ -1,3 +1,18 @@
+
+
+stage('Run JAR') {
+    steps {
+        bat 'start "" java -jar target\\helloweb-0.0.1-SNAPSHOT.jar'
+        sleep time: 5, unit: 'SECONDS'
+        echo 'App started'
+    }
+}
+
+
+bat 'for %%f in (target\\*.jar) do start "" java -jar "%%f"'
+
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">

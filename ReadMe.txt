@@ -23,7 +23,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/YOUR_USERNAME/hello-world.git'
+                git branch: 'main', url: 'https://github.com/lantranlan007/hello-world.git'
             }
         }
 

@@ -1,3 +1,4 @@
+java -jar target\helloweb-0.0.1-SNAPSHOT.jar
 
 
 stage('Run JAR') {

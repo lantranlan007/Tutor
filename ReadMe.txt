@@ -1,4 +1,10 @@
 
+
+git add .
+git commit -m "Add Jenkinsfile"
+git push origin main
+
+
 Jenkinsfile
 
 pipeline {

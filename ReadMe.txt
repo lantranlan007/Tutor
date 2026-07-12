@@ -1,3 +1,16 @@
+
+
+
+Save your code as hello.py:
+
+print("Hello, World!")
+input("Press Enter to exit...")
+
+pip install pyinstaller
+
+pyinstaller --onefile hello.pyhello.exe
+
+
 8070
 https://lazy-gatherer-barracuda.ngrok-free.dev 
 

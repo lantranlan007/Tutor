@@ -1,5 +1,5 @@
 
-
+winget install Python.Python.3.12
 
 Save your code as hello.py:
 

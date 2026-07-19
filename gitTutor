@@ -1,3 +1,281 @@
+Here's a list of all the Git commands we've discussed in this chat, organized by purpose.
+
+# 1. Create a repository
+
+Initialize a Git repository:
+
+```bash
+git init
+```
+
+---
+
+# 2. Check repository status
+
+See which files have changed:
+
+```bash
+git status
+```
+
+---
+
+# 3. Stage files
+
+Stage all files:
+
+```bash
+git add .
+```
+
+Stage one file:
+
+```bash
+git add HelloWorld.java
+```
+
+---
+
+# 4. Commit changes
+
+Create a commit:
+
+```bash
+git commit -m "Initial commit"
+```
+
+---
+
+# 5. View commit history
+
+Full history:
+
+```bash
+git log
+```
+
+Compact history:
+
+```bash
+git log --oneline
+```
+
+Show the last 3 commits:
+
+```bash
+git log -3
+```
+
+Show the last 3 commits in one-line format:
+
+```bash
+git log --oneline -3
+```
+
+Show commits with code changes:
+
+```bash
+git log -p
+```
+
+Show history as a graph:
+
+```bash
+git log --oneline --graph --all
+```
+
+Show commits on GitHub that you don't have locally:
+
+```bash
+git log main..origin/main
+```
+
+Show commits you have locally that haven't been pushed:
+
+```bash
+git log origin/main..main
+```
+
+---
+
+# 6. Compare code
+
+Compare your local branch with the remote-tracking branch:
+
+```bash
+git diff main origin/main
+```
+
+---
+
+# 7. Configure remote repository
+
+Add GitHub as a remote:
+
+```bash
+git remote add origin https://github.com/<username>/hello-java.git
+```
+
+List configured remotes:
+
+```bash
+git remote -v
+```
+
+---
+
+# 8. Branch commands
+
+Rename the current branch:
+
+```bash
+git branch -M main
+```
+
+Show local branches:
+
+```bash
+git branch
+```
+
+---
+
+# 9. Upload and download
+
+Push for the first time:
+
+```bash
+git push -u origin main
+```
+
+Push later:
+
+```bash
+git push
+```
+
+Force push (use with caution):
+
+```bash
+git push --force origin main
+```
+
+Download remote changes only:
+
+```bash
+git fetch
+```
+
+Download and merge:
+
+```bash
+git pull
+```
+
+---
+
+# 10. Reset branch
+
+Move branch, keep staged changes:
+
+```bash
+git reset --soft <commit-id>
+```
+
+Move branch, keep unstaged changes:
+
+```bash
+git reset --mixed <commit-id>
+```
+
+or
+
+```bash
+git reset <commit-id>
+```
+
+Move branch and discard changes:
+
+```bash
+git reset --hard <commit-id>
+```
+
+---
+
+# 11. Revert commits
+
+Undo one commit safely:
+
+```bash
+git revert <commit-id>
+```
+
+Undo the latest commit:
+
+```bash
+git revert HEAD
+```
+
+Undo the last three commits:
+
+```bash
+git revert HEAD~2..HEAD
+```
+
+---
+
+# 12. Useful everyday workflow
+
+```bash
+git status
+git add .
+git commit -m "Describe your changes"
+git push
+```
+
+---
+
+# 13. Team workflow
+
+```bash
+git fetch
+git log main..origin/main
+git diff main origin/main
+git pull
+```
+
+---
+
+## Commands you'll use most often
+
+If you're starting with Git, focus on these 15 commands:
+
+| Command                     | Purpose                                  |
+| --------------------------- | ---------------------------------------- |
+| `git init`                  | Create a Git repository                  |
+| `git status`                | Check file status                        |
+| `git add .`                 | Stage all changes                        |
+| `git commit -m "..."`       | Save a snapshot                          |
+| `git log --oneline`         | View commit history                      |
+| `git branch`                | List branches                            |
+| `git branch -M main`        | Rename current branch                    |
+| `git remote add origin ...` | Connect to GitHub                        |
+| `git remote -v`             | Show remotes                             |
+| `git push -u origin main`   | First push to GitHub                     |
+| `git push`                  | Push new commits                         |
+| `git fetch`                 | Download remote updates                  |
+| `git pull`                  | Download and merge updates               |
+| `git diff`                  | Compare file changes                     |
+| `git revert <commit>`       | Safely undo a commit in a shared project |
+
+These commands cover most of the Git operations you'll perform in day-to-day development. As you become more comfortable with Git, you can build on this foundation with branching, merging, rebasing, and other advanced workflows.
+
+--------------
+
+https://chatgpt.com/c/6a5c6194-7414-83ea-a357-d1a15b0d0ba6
+
+---------------
+
 git remote add origin https://github.com/<your-username>/hello-java.git
 
 tells Git where your local repository should be connected on GitHub.

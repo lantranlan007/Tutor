@@ -1,0 +1,432 @@
+git remote add origin https://github.com/<your-username>/hello-java.git
+
+tells Git where your local repository should be connected on GitHub.
+
+Let's break it down:
+
+git
+
+Runs the Git program.
+
+remote
+
+A remote is another copy of your repository, usually hosted on a server like GitHub.
+
+Your local repository is on your computer. The remote repository is on GitHub.
+
+add
+
+Adds a new remote.
+
+origin
+
+origin is just a name (an alias) for the remote repository.
+
+You could name it anything:
+
+git remote add github https://github.com/username/hello-java.git
+
+or
+
+git remote add myrepo https://github.com/username/hello-java.git
+
+But almost everyone uses origin, so Git commands assume that's the main remote.
+
+https://github.com/<your-username>/hello-java.git
+
+This is the URL of your GitHub repository.
+
+For example, if your GitHub username is johnsmith, it becomes:
+
+git remote add origin https://github.com/johnsmith/hello-java.git
+What happens after this?
+
+Your local Git repository now knows where the GitHub repository is.
+
+You can verify it:
+
+git remote -v
+
+Example output:
+
+origin  https://github.com/johnsmith/hello-java.git (fetch)
+origin  https://github.com/johnsmith/hello-java.git (push)
+fetch: Download changes from GitHub.
+push: Upload your commits to GitHub.
+Why is this needed?
+
+Before adding a remote:
+
+Your Computer
+┌───────────────┐
+│ hello-java    │
+│ Git repository│
+└───────────────┘
+
+After adding the remote:
+
+Your Computer                     GitHub
+┌───────────────┐            ┌─────────────────────┐
+│ hello-java    │──────────▶│ hello-java          │
+│ Git repository│  origin   │ Remote repository   │
+└───────────────┘            └─────────────────────┘
+
+Git stores this connection so later you can simply run:
+
+git push
+
+or
+
+git pull
+
+without typing the full GitHub URL each time.
+
+----------
+
+git fetch and git pull are related, but they do different things.
+
+Command	Downloads changes	Updates your local branch	Safe?
+git fetch	✅ Yes	❌ No	✅ Very safe
+git pull	✅ Yes	✅ Yes	⚠️ May cause merge conflicts
+1. git fetch
+git fetch
+
+This downloads new commits from the remote repository (GitHub), but does not change your working files or current branch.
+
+Example
+
+Suppose GitHub has one new commit.
+
+Before fetch:
+
+GitHub (origin/main)
+A --- B --- C
+
+Local (main)
+A --- B
+
+Run:
+
+git fetch
+
+After fetch:
+
+GitHub (origin/main)
+A --- B --- C
+
+Local (main)
+A --- B
+
+Remote-tracking branch
+origin/main
+A --- B --- C
+
+Notice:
+
+Your local main is still at B.
+Git now knows that origin/main is at C.
+
+You can inspect the new commit before updating your branch.
+
+Useful commands after fetching:
+
+git log main..origin/main
+
+or
+
+git diff main origin/main
+2. git pull
+git pull
+
+git pull is equivalent to:
+
+git fetch
+git merge
+
+It downloads the changes and immediately merges them into your current branch.
+
+Example:
+
+Before:
+
+GitHub
+A --- B --- C
+
+Local
+A --- B
+
+Run:
+
+git pull
+
+After:
+
+GitHub
+A --- B --- C
+
+Local
+A --- B --- C
+
+Your local branch is now updated automatically.
+
+If both you and GitHub have new commits
+
+Suppose:
+
+GitHub
+A --- B --- C
+
+Local
+A --- B --- D
+git fetch
+
+After fetching:
+
+main
+A --- B --- D
+
+origin/main
+A --- B --- C
+
+Nothing changes in your current branch. You can decide how to combine the histories.
+
+git pull
+
+Git tries to merge automatically:
+
+      C
+     /
+A---B
+     \
+      D
+       \
+        M
+
+If both commits modify the same lines, Git may report a merge conflict, which you'll need to resolve before completing the merge.
+
+Which should you use?
+Use git fetch when you want to see what's new before updating your branch. This is common in larger teams because it lets you review incoming changes first.
+Use git pull when you simply want to bring your local branch up to date and you're comfortable with Git merging the changes automatically.
+Easy way to remember
+Fetch = Download only
+Pull = Download + Merge
+
+A good habit is:
+
+git fetch
+git log --oneline main..origin/main
+
+Review the incoming changes, then update with:
+
+git merge origin/main
+
+or, if you prefer a single command:
+
+git pull
+
+This gives you more control over when and how your local branch changes.
+
+--------------
+
+git log main..origin/main
+git diff main origin/main
+
+These commands compare your local branch (main) with the remote-tracking branch (origin/main).
+
+Think of them like this:
+
+main = your local copy.
+origin/main = your local record of what's on GitHub (updated by git fetch).
+1. git log main..origin/main
+git log main..origin/main
+
+This shows commits that are in origin/main but NOT in main.
+
+Suppose:
+
+Local (main)
+
+A --- B
+
+
+GitHub (origin/main)
+
+A --- B --- C --- D
+
+After git fetch:
+
+main
+A --- B
+
+origin/main
+A --- B --- C --- D
+
+Run:
+
+git log main..origin/main
+
+Output:
+
+commit D
+Author: Alice
+Message: Fix login bug
+
+commit C
+Author: Bob
+Message: Add payment feature
+
+Git is saying:
+
+"These commits exist on GitHub but you don't have them yet."
+
+Reverse it
+git log origin/main..main
+
+Now Git shows commits you have locally but haven't pushed.
+
+Example:
+
+main
+A --- B --- C
+
+origin/main
+A --- B
+
+Output:
+
+commit C
+Message: Add README
+
+This is useful before running git push.
+
+2. git diff main origin/main
+
+git diff compares the actual file contents.
+
+Suppose:
+
+Local HelloWorld.java
+
+System.out.println("Hello");
+
+GitHub version
+
+System.out.println("Hello World!");
+
+Run:
+
+git diff main origin/main
+
+Output:
+
+-System.out.println("Hello");
++System.out.println("Hello World!");
+
+Unlike git log, which shows commits, git diff shows the code changes.
+
+An easy analogy
+
+Imagine writing a Word document.
+
+git log
+
+Shows revision history.
+
+Revision 10
+- Added login page
+
+Revision 11
+- Fixed bug
+
+You see what changes were made and who made them.
+
+git diff
+
+Shows the document itself with highlighted edits.
+
+- Hello
++ Hello World!
+
+You see exactly which lines changed.
+
+---------
+
+Command	Purpose	Shows
+git log main..origin/main	Compare commit history	Commits on GitHub that you don't have locally
+git log origin/main..main	Compare commit history	Commits you have locally that aren't on GitHub
+git diff main origin/main	Compare file contents	The exact line-by-line code differences
+git fetch	Update remote-tracking branches	Downloads the latest GitHub state without changing your working files
+
+----------
+
+git branch -M main
+
+What it does
+branch = manage branches.
+-M = rename the current branch, even if the target name already exists.
+main = the new branch name.
+
+For example, after git init, your default branch might be named master (or main, depending on your Git version).
+
+Before:
+
+master
+
+After:
+
+main
+
+You can check your current branch with:
+
+git branch
+
+Output:
+
+* main
+
+The * indicates the branch you're currently on.
+
+--------------------
+
+git push -u origin main
+
+This command uploads your local main branch to GitHub.
+
+Let's break it down:
+
+git push = send your commits to a remote repository.
+-u = set the upstream (tracking) branch.
+origin = the remote repository (the GitHub repository you added earlier).
+main = the local branch to push.
+What is an upstream (tracking) branch?
+
+Before running this command:
+
+Local
+main
+
+GitHub
+(empty)
+
+After running it:
+
+Local                      GitHub
+main  ------------------>  main
+          tracking
+
+Git remembers that:
+
+Local branch: main
+Remote branch: origin/main
+
+Because of -u, the next time you make changes you only need:
+
+git add .
+git commit -m "Update Hello World"
+git push
+
+You don't need to type:
+
+git push origin main
+
+every time.

@@ -15,13 +15,6 @@ Using Git with Visual Studio Code (Official Beginner Tutorial) [i_23KUAEtUM].web
 cp "Using Git with Visual Studio Code (Official Beginner Tutorial) [i_23KUAEtUM].webm" \
 /mnt/c/Users/tommypho1/Downloads/
 
-download into mp4 format:
-docker run --rm \
-    -v "$(pwd):/downloads" \
-    jauderho/yt-dlp \
-    -f "bv*+ba/b" \
-    --merge-output-format mp4 \
-    "https://code.visualstudio.com/docs/introvideos/versioncontrol"
 
 Save image and backup:
 docker images
@@ -63,7 +56,6 @@ docker run --rm \
     -v "$(pwd):/downloads" \
     jauderho/yt-dlp \
     -f "bv*+ba/b" \
-    --merge-output-format mp4 \
     "https://code.visualstudio.com/docs/introvideos/versioncontrol"
 
 Docker will:

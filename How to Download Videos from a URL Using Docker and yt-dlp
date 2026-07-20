@@ -76,5 +76,23 @@ Remove the container because of --rm
 
 link back up tar: https://drive.google.com/file/d/1w1Ebblt9t9U8hUv0mfId3TvMArV3Aewk/view?usp=sharing
 
+notepad.exe urls.txt
+
+nano urls.txt
+
+Save:
+
+Press Ctrl + O (write file)
+Press Enter (confirm filename)
+Press Ctrl + X (exit)
+
+docker run --rm \
+    -v "$(pwd):/downloads" \
+    jauderho/yt-dlp \
+    --continue \
+    -f "bv*+ba/b" \
+    --merge-output-format mp4 \
+    -a urls.txt
+
 https://chatgpt.com/share/6a5daf31-d610-83ea-9776-c2afea6cd596
 	

@@ -22,4 +22,57 @@ docker run --rm \
     -f "bv*+ba/b" \
     --merge-output-format mp4 \
     "https://code.visualstudio.com/docs/introvideos/versioncontrol"
+
+Save image and backup:
+docker images
+
+IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+hello-world:latest       96498ffd522e       25.9kB         9.49kB    U
+jauderho/yt-dlp:latest   652ef23fd52e        542MB          153MB
+jenkins/jenkins:lts      e82bbdcffb63        810MB          292MB    U
+tommypho1@DESKTOP-J8UKU9V:~$ docker save -o yt-dlp-image.tar jauderho/yt-dlp
+
+cp "yt-dlp-image.tar" /mnt/c/Users/tommypho1/Downloads/
+
+Restore later
+
+docker load -i yt-dlp-image.tar
+
+docker load only restores the image into Docker's image repository.
+
+Check:
+
+docker images
+
+Output:
+
+REPOSITORY        TAG       IMAGE ID
+jauderho/yt-dlp   latest    a1b2c3d4e5f6
+
+At this point:
+
+docker ps
+
+will show nothing because no container is running.
+
+To run the container again
+
+You run the same command:
+
+docker run --rm \
+    -v "$(pwd):/downloads" \
+    jauderho/yt-dlp \
+    -f "bv*+ba/b" \
+    --merge-output-format mp4 \
+    "https://code.visualstudio.com/docs/introvideos/versioncontrol"
+
+Docker will:
+
+Find image jauderho/yt-dlp
+Create a new container
+Run yt-dlp inside the container
+Download the video
+Remove the container because of --rm
+
+https://chatgpt.com/share/6a5daf31-d610-83ea-9776-c2afea6cd596
 	

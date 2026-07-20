@@ -1,0 +1,25 @@
+1. make sure Docker Desktop start by calling app Docker Desktop
+2. docker pull jauderho/yt-dlp
+3. run command:
+
+docker run --rm \
+    -v "$(pwd):/downloads" \
+    jauderho/yt-dlp \
+    -f "bv*+ba/b" \
+    "https://code.visualstudio.com/docs/introvideos/versioncontrol"
+
+get result:
+Using Git with Visual Studio Code (Official Beginner Tutorial) [i_23KUAEtUM].webm
+
+4. copy to host
+cp "Using Git with Visual Studio Code (Official Beginner Tutorial) [i_23KUAEtUM].webm" \
+/mnt/c/Users/tommypho1/Downloads/
+
+download into mp4 format:
+docker run --rm \
+    -v "$(pwd):/downloads" \
+    jauderho/yt-dlp \
+    -f "bv*+ba/b" \
+    --merge-output-format mp4 \
+    "https://code.visualstudio.com/docs/introvideos/versioncontrol"
+	

@@ -1,2 +1,109 @@
 Create docker having jenkins in port 8070
 To run Jenkins in Docker on port 8070, you just need to map your local port to Jenkins container port 8080.
+✅ Run Jenkins container on port 8070
+
+Execute this in Ubuntu (WSL) or PowerShell:
+
+docker run -d \
+  --name jenkins \
+  -p 8070:8080 \
+  -p 50000:50000 \
+  jenkins/jenkins:lts
+🧠 What this means
+Part	Meaning
+8070:8080	Your PC port 8070 → Jenkins inside container port 8080
+50000:50000	Jenkins agent communication
+jenkins/jenkins:lts	Official Jenkins image
+🌐 Access Jenkins
+
+After it starts, open:
+
+http://localhost:8070
+🔑 Get Jenkins initial password
+
+Run:
+
+docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+Copy the password and paste into browser.
+
+⚠️ If port already used
+
+Check:
+
+netstat -ano | findstr 8070
+
+or change port:
+
+-p 8085:8080
+🚀 Optional (recommended for persistence)
+
+So Jenkins data is not lost:
+
+docker run -d \
+  --name jenkins \
+  -p 8070:8080 \
+  -p 50000:50000 \
+  -v jenkins_home:/var/jenkins_home \
+  jenkins/jenkins:lts
+
+Port 50000 is used by Jenkins for agent (slave) communication.
+
+🧠 What port 50000 is for
+
+When you run Jenkins in Docker:
+
+Jenkins Controller (Master)
+        │
+        │  TCP 50000
+        ▼
+Jenkins Agents (Workers)
+
+So:
+
+8080 / 8070 → Web UI (you open in browser)
+50000 → Jenkins agents connect to Jenkins server
+🤖 Why Jenkins needs it
+
+It is used when you:
+
+Run builds on another machine/container
+Use distributed builds
+Connect Jenkins agents via JNLP (Java Web Start protocol)
+❗ Do you always need port 50000?
+
+👉 No
+
+If you are:
+
+Only using Jenkins locally
+Not adding agents
+
+You can safely remove it.
+
+✅ Option 1 (simple — recommended for you)
+docker run -d \
+  --name jenkins \
+  -p 8070:8080 \
+  jenkins/jenkins:lts
+
+✔ Works fine for learning
+✔ Web UI only
+❌ No agent connections (not needed yet)
+
+✅ Option 2 (full setup)
+
+If you want full Jenkins architecture:
+
+docker run -d \
+  --name jenkins \
+  -p 8070:8080 \
+  -p 50000:50000 \
+  jenkins/jenkins:lts
+🚀 Recommendation
+
+Since you're just starting Jenkins:
+
+👉 Use only port 8070
+👉 Ignore 50000 for now
+

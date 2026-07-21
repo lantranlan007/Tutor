@@ -1,0 +1,2 @@
+Create docker having jenkins in port 8070
+To run Jenkins in Docker on port 8070, you just need to map your local port to Jenkins container port 8080.

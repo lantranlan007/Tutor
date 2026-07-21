@@ -107,3 +107,43 @@ Since you're just starting Jenkins:
 👉 Use only port 8070
 👉 Ignore 50000 for now
 
+To see the Jenkins initial admin password inside a Docker container, you just read a file from inside the container.
+
+✅ Step-by-step
+1. Find your container name
+
+Run:
+
+docker ps
+
+You will see something like:
+
+CONTAINER ID   NAME      IMAGE
+abc123         jenkins   jenkins/jenkins:lts
+2. Get initial admin password
+
+Run this command:
+
+docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+👉 Replace jenkins with your container name if different.
+
+🔑 Example output
+e3b1c6f8a8f14b6c9d2e7a...
+
+Copy this password and paste it in:
+
+http://localhost:8070
+⚠️ If you don’t know container name
+
+You can also use container ID:
+
+docker exec -it <container_id> cat /var/jenkins_home/secrets/initialAdminPassword
+🚀 Alternative (inside container shell)
+docker exec -it jenkins bash
+
+Then inside container:
+
+cat /var/jenkins_home/secrets/initialAdminPassword
+
+

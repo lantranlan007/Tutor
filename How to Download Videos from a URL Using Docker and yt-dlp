@@ -86,5 +86,37 @@ docker run --rm \
     --merge-output-format mp4 \
     -a urls.txt
 
+create folder webm, mp4
+mkdir -p mp4
+
+install  gedit
+sudo apt update
+sudo apt install gedit
+
+gedit convert_webm_to_mp4.sh
+
+for file in webm/*.webm; do
+    filename=$(basename "$file" .webm)
+
+    docker run --rm \
+        -v "$(pwd)/webm:/input" \
+        -v "$(pwd)/mp4:/output" \
+        --entrypoint ffmpeg \
+        jauderho/yt-dlp \
+        -i "/input/$(basename "$file")" \
+        -c:v copy \
+        -c:a aac \
+        "/output/${filename}.mp4"
+done
+
+chmod +x convert_webm_to_mp4.sh
+
+./convert_webm_to_mp4.sh
+
+
+
+
+
+
 https://chatgpt.com/share/6a5daf31-d610-83ea-9776-c2afea6cd596
 	

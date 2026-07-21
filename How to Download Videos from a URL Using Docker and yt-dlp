@@ -113,7 +113,36 @@ chmod +x convert_webm_to_mp4.sh
 
 ./convert_webm_to_mp4.sh
 
+mkdir -p mp3
 
+gedit convert_webm_to_mp3.sh
+
+#!/bin/bash
+
+mkdir -p mp3
+
+for file in webm/*.webm; do
+    filename=$(basename "$file" .webm)
+
+    echo "Converting: $file"
+
+    docker run --rm \
+        -v "$(pwd)/webm:/input" \
+        -v "$(pwd)/mp3:/output" \
+        --entrypoint ffmpeg \
+        jauderho/yt-dlp \
+        -i "/input/$(basename "$file")" \
+        -vn \
+        -c:a libmp3lame \
+        -q:a 2 \
+        "/output/${filename}.mp3"
+done
+
+echo "All conversions completed."
+
+chmod +x convert_webm_to_mp3.sh
+
+./convert_webm_to_mp3.sh
 
 
 

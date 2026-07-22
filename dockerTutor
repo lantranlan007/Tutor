@@ -44,5 +44,282 @@ Here:
 So, for interactive containers, you usually use:
 docker run -it <image>
 
+docker save -o jenkins-lts.tar jenkins/jenkins:lts
+docker load -i jenkins-lts.tar
+docker images
 
-  
+docker run --rm \
+  -v jenkins_home:/data \
+  -v "$(pwd):/backup" \
+  ubuntu \
+  tar czf /backup/jenkins_home_backup.tar.gz -C /data .
+
+docker run --rm \
+  -v f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50:/data \
+  -v "$(pwd):/backup" \
+  ubuntu \
+  tar czf /backup/jenkins_volume_backup.tar.gz -C /data .
+
+
+docker volume create jenkins_home
+
+docker run --rm \
+  -v f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50:/from \
+  -v jenkins_home:/to \
+  ubuntu \
+  bash -c "cp -a /from/. /to/"
+
+--------------------
+reference:
+
+Yes. Your Docker volume name is:
+
+f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50
+
+You can back it up using the same method, just replace jenkins_home with the actual volume name.
+
+Step 1: Stop Jenkins first
+
+If this volume belongs to your Jenkins container:
+
+docker stop jenkins
+Step 2: Run the backup command
+
+From your home directory (~), run:
+
+docker run --rm \
+  -v f92e831d3904b4027691fdbf533a2b6d7aa4b90e63074d76f5ca803b8c4c50:/data \
+  -v "$(pwd):/backup" \
+  ubuntu \
+  tar czf /backup/jenkins_volume_backup.tar.gz -C /data .
+
+Wait: I notice your actual volume name in your message is:
+
+f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50
+
+Make sure you use exactly that name. The command should be:
+
+docker run --rm \
+  -v f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50:/data \
+  -v "$(pwd):/backup" \
+  ubuntu \
+  tar czf /backup/jenkins_volume_backup.tar.gz -C /data .
+
+Since you are currently in:
+
+/home/tommypho1
+
+the backup file will be created at:
+
+/home/tommypho1/jenkins_volume_backup.tar.gz
+
+Check it:
+
+ls -lh jenkins_volume_backup.tar.gz
+Step 3: Start Jenkins again
+docker start jenkins
+What happens
+Docker Volume
+f92e831d3904...
+       │
+       │ -v volume:/data
+       ▼
+Temporary Ubuntu Container
+       │
+       │ tar czf
+       ▼
+/backup/jenkins_volume_backup.tar.gz
+       │
+       │ -v "$(pwd):/backup"
+       ▼
+Your WSL home directory
+
+The ubuntu image is only being used as a temporary tool to run tar. Because of --rm, the temporary container is deleted after the backup finishes. The Docker volume itself is not deleted.
+
+One thing to check first: because your volume has a long random name, you can use this command to confirm which container is using it:
+
+docker ps -a --filter volume=f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50
+
+That will help confirm that this is indeed your Jenkins volume before you back it up.
+
+how to delete or rename volumn
+
+Yes. Docker volumes can be deleted, but Docker does not have a direct docker volume rename command.
+
+1. Delete a volume
+
+First, see your volumes:
+
+docker volume ls
+
+Your volume is:
+
+f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50
+
+Remove it:
+
+docker volume rm f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50
+
+⚠️ Be careful: This permanently deletes the data stored in the volume.
+
+If the volume is being used by a container, Docker will give you an error. You need to stop and remove the container first:
+
+docker stop jenkins
+docker rm jenkins
+
+Then:
+
+docker volume rm f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50
+2. Rename a volume
+
+Docker doesn't have:
+
+docker volume rename
+
+Instead, you can create a new volume and copy the data.
+
+For example, rename your random volume to:
+
+jenkins_home
+Step 1: Create the new volume
+docker volume create jenkins_home
+Step 2: Copy the data
+
+You can use a temporary Ubuntu container:
+
+docker run --rm \
+  -v f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50:/from \
+  -v jenkins_home:/to \
+  ubuntu \
+  bash -c "cp -a /from/. /to/"
+
+The result is:
+
+Old volume
+f92e831d3904...
+       │
+       │ copy data
+       ▼
+New volume
+jenkins_home
+Step 3: Verify
+docker volume ls
+
+You should see both:
+
+f92e831d3904...
+jenkins_home
+Step 4: Use the new volume with Jenkins
+
+If you remove and recreate your Jenkins container:
+
+docker run -d \
+  --name jenkins \
+  -p 8070:8080 \
+  -p 50000:50000 \
+  -v jenkins_home:/var/jenkins_home \
+  jenkins/jenkins:lts
+
+Jenkins will now use:
+
+jenkins_home
+
+instead of the long random volume name.
+
+Step 5: Delete the old volume
+
+Only after you confirm that Jenkins works correctly with the new volume:
+
+docker volume rm f92e831d3904b4027691fdbf533a2b6d7aa4a1b90e63074d76f5ca803b8c4c50
+
+My recommendation: Since your volume name looks like a randomly generated name, I would back it up first, copy it to jenkins_home, verify Jenkins, and only then delete the old volume. This gives you a safe recovery path if something goes wrong.
+
+can i use the same container jenkins with different volumn when i use run
+
+Yes, but not with the same container. docker run always creates a new container. You cannot use docker run to change the volume attached to an existing container.
+
+Think of it like this:
+
+Container: jenkins
+    │
+    └── Volume: old_volume
+
+If you want the same Jenkins container to use a different volume, you have two options.
+
+Option 1: Create a new container with the new volume
+
+First stop and remove the old container:
+
+docker stop jenkins
+docker rm jenkins
+
+Then create a new container with the same name but a different volume:
+
+docker run -d \
+  --name jenkins \
+  -p 8070:8080 \
+  -p 50000:50000 \
+  -v jenkins_home:/var/jenkins_home \
+  jenkins/jenkins:lts
+
+The container is new, but you reuse the name jenkins.
+
+Old:
+jenkins container
+      ↓
+old_volume
+
+Remove container
+      ↓
+
+New:
+jenkins container
+      ↓
+jenkins_home
+
+Your Jenkins data is preserved if you copied the old volume data into jenkins_home.
+
+Option 2: Use the old container again
+
+If you simply do:
+
+docker start jenkins
+
+Docker will use the same volume configuration that was defined when the container was created.
+
+You cannot do this:
+
+docker start jenkins -v new_volume:/var/jenkins_home
+
+docker start does not let you change volume mounts.
+
+The key difference
+docker run
+
+➡️ Creates a new container.
+
+docker start
+
+➡️ Starts an existing container with its original configuration.
+
+So if you want to switch from:
+
+old_volume
+
+to:
+
+jenkins_home
+
+the normal approach is:
+
+docker stop jenkins
+docker rm jenkins
+
+docker run -d \
+  --name jenkins \
+  -p 8070:8080 \
+  -p 50000:50000 \
+  -v jenkins_home:/var/jenkins_home \
+  jenkins/jenkins:lts
+
+The container is disposable, while the volume holds your persistent Jenkins data. This separation is one of the main advantages of Docker.

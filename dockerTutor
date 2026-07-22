@@ -1,0 +1,48 @@
+docker images
+                                                                                                                                                        i Info →   U  In Use
+IMAGE                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+hello-world:latest       96498ffd522e       25.9kB         9.49kB    U
+jauderho/yt-dlp:latest   652ef23fd52e        542MB          153MB
+jenkins/jenkins:lts      e82bbdcffb63        810MB          292MB    U
+
+ docker ps
+CONTAINER ID   IMAGE                 COMMAND                  CREATED       STATUS        PORTS                                         NAMES
+f29bb172bf97   jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   3 weeks ago   Up 18 hours   0.0.0.0:8070->8080/tcp, [::]:8070->8080/tcp   jenkins
+
+docker pull <image-name>
+docker pull jenkins/jenkins:lts
+
+docker run is used to create a new container and start it from a Docker image.
+docker run [options] <image>
+docker run -d nginx
+docker run -d --name my-nginx nginx
+
+If you want to access Nginx from your computer:
+docker run -d --name my-nginx -p 8080:80 nginx
+-p HOST_PORT:CONTAINER_PORT
+
+You can see all containers, including stopped ones:
+docker ps -a
+
+To permanently remove a stopped container:
+docker rm my-nginx
+force-remove a running container:
+docker rm -f my-nginx
+
+docker stop jenkins
+docker start jenkins
+
+docker rm jenkins
+The container is deleted, but your Jenkins image and Docker volume are not automatically deleted.
+
+Here:
+
+-i = keep stdin open
+-t = allocate a terminal (TTY)
+-it = interactive terminal
+
+So, for interactive containers, you usually use:
+docker run -it <image>
+
+
+  

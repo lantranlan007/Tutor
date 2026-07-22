@@ -1,3 +1,6 @@
+Jenkins an item type Pipeline vs Freestyle project
+https://chatgpt.com/c/6a3c4ad2-c5ec-83ea-b64e-05c8914d514e
+
 check service jenkins in windows: Win + R, type: services.msc
 check port running: C:\Program Files\Jenkins\jenkins.xml, search: --httpPort
 

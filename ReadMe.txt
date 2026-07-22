@@ -1,3 +1,6 @@
+books:
+https://github.com/wandrounik/Software-Engineering-Books/blob/main/Kubernetes%20in%20Action.pdf
+
 Jenkins an item type Pipeline vs Freestyle project
 https://chatgpt.com/c/6a3c4ad2-c5ec-83ea-b64e-05c8914d514e
 

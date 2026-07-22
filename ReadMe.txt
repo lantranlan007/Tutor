@@ -1,3 +1,6 @@
+check service jenkins in windows: Win + R, type: services.msc
+check port running: C:\Program Files\Jenkins\jenkins.xml, search: --httpPort
+
 https://app.dataannotation.tech/workers/projects
 
 winget install Python.Python.3.12

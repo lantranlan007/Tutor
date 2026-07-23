@@ -10,6 +10,11 @@ kubectl get namespaces
 A Namespace is a way to organize and separate Kubernetes resources.
 Namespaces are like logical folders that Kubernetes uses to organize resources such as Pods, Deployments, and Services.
 
+Namespace: default
+This is the namespace where your resources go if you don't specify a namespace.
+For example: kubectl create deployment nginx --image=nginx
+Because you didn't specify a namespace, Kubernetes creates the Deployment in: default
+
 -------------------
 
 C:\Users\tommypho1>minikube start --driver=docker

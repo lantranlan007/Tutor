@@ -3,7 +3,12 @@ minikube version
 docker version
 minikube start --driver=docker
 kubectl get nodes
+kubectl get pods
+minikube kubectl -- get pods -A
+kubectl get namespaces
 
+A Namespace is a way to organize and separate Kubernetes resources.
+Namespaces are like logical folders that Kubernetes uses to organize resources such as Pods, Deployments, and Services.
 
 -------------------
 
@@ -37,4 +42,14 @@ C:\Users\tommypho1>kubectl get nodes
 NAME       STATUS   ROLES           AGE   VERSION
 minikube   Ready    control-plane   13m   v1.35.1
 
+C:\Users\tommypho1>kubectl get pods
+No resources found in default namespace.
+
+
+C:\Users\tommypho1>kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   25m
+kube-node-lease   Active   25m
+kube-public       Active   25m
+kube-system       Active   25m
 -------------------

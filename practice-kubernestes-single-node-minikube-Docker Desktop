@@ -14,6 +14,32 @@ Namespace: default
 This is the namespace where your resources go if you don't specify a namespace.
 For example: kubectl create deployment nginx --image=nginx
 Because you didn't specify a namespace, Kubernetes creates the Deployment in: default
+You can see resources there with:
+kubectl get pods
+or explicitly:
+kubectl get pods -n default
+
+Create: nginx-service.yaml
+With:
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
+
+Apply:
+kubectl apply -f nginx-service.yaml
+
+
+
 
 -------------------
 
@@ -57,4 +83,8 @@ default           Active   25m
 kube-node-lease   Active   25m
 kube-public       Active   25m
 kube-system       Active   25m
+
+C:\Users\tommypho1\Desktop>kubectl apply -f nginx-service.yaml
+service/nginx-service created
+
 -------------------

@@ -1,1 +1,40 @@
 winget install Kubernetes.minikube
+minikube version
+docker version
+minikube start --driver=docker
+kubectl get nodes
+
+
+-------------------
+
+C:\Users\tommypho1>minikube start --driver=docker
+* minikube v1.38.1 on Microsoft Windows 10 Home 22H2
+* Using the docker driver based on user configuration
+! Starting v1.39.0, minikube will default to "containerd" container runtime. See #21973 for more info.
+* Using Docker Desktop driver with root privileges
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Pulling base image v0.0.50 ...
+* Downloading Kubernetes v1.35.1 preload ...
+    > gcr.io/k8s-minikube/kicbase...:  519.58 MiB / 519.58 MiB  100.00% 35.89 M
+    > preloaded-images-k8s-v18-v1...:  272.45 MiB / 272.45 MiB  100.00% 10.42 M
+* Creating docker container (CPUs=2, Memory=3072MB) ...
+* Preparing Kubernetes v1.35.1 on Docker 29.2.1 ...
+* Configuring bridge CNI (Container Networking Interface) ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: default-storageclass, storage-provisioner
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+C:\Users\tommypho1>minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+C:\Users\tommypho1>kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   13m   v1.35.1
+
+-------------------

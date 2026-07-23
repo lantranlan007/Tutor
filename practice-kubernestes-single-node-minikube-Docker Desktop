@@ -61,6 +61,7 @@ spec:
           ports:
             - containerPort: 80
 
+kubectl apply -f nginx-deployment.yaml
 
 
 -------------------
@@ -109,4 +110,18 @@ kube-system       Active   25m
 C:\Users\tommypho1\Desktop>kubectl apply -f nginx-service.yaml
 service/nginx-service created
 
+C:\Users\tommypho1\Desktop>kubectl get deployments
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   0/2     2            0           37s
+
+C:\Users\tommypho1\Desktop>kubectl get pods
+NAME                                READY   STATUS    RESTARTS   AGE
+nginx-deployment-59f86b59ff-5p5xw   1/1     Running   0          106s
+nginx-deployment-59f86b59ff-rg9vg   1/1     Running   0          106s
+
+C:\Users\tommypho1\Desktop>kubectl get deployments
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   2/2     2            2           2m33s
+
+C:\Users\tommypho1\Desktop>
 -------------------

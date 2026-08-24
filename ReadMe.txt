@@ -1,3 +1,16 @@
+https://chatgpt.com/c/6a7899e2-2a18-83ea-8d4a-8c2f984c6f3c
+
+docker run -d \
+  --name kokoro \
+  -p 8880:8880 \
+  --restart unless-stopped \
+  ghcr.io/remsky/kokoro-fastapi-cpu:latest
+
+curl -X POST "http://localhost:8880/v1/audio/speech"   -H "Content-Type: application/json"   -d "{\"model\":\"kokoro\",\"input\":\"$(cat input.txt | tr '\n' ' ')\",\"voice\":\"af_heart\",\"response_format\":\"mp3\"}"   --output output1.mp3
+ffmpeg -i output1.mp3 -filter:a "atempo=0.65" output.mp3
+gedit input.txt
+
+
 books:
 https://github.com/wandrounik/Software-Engineering-Books/blob/main/Kubernetes%20in%20Action.pdf
 

@@ -1,3 +1,8 @@
+mkdir my-wordpress
+cd my-wordpress
+
+gedit docker-compose.yml
+
 https://chatgpt.com/c/6a7899e2-2a18-83ea-8d4a-8c2f984c6f3c
 
 docker run -d \

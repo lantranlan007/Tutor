@@ -1,3 +1,6 @@
+sudo apt install rclone
+rclone config
+-----------
 gedit tts.sh
 
 #!/bin/bash

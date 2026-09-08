@@ -1,3 +1,30 @@
+gedit tts.sh
+
+#!/bin/bash
+
+set -e
+
+INPUT_FILE="${1:-input.txt}"
+OUTPUT_MP3="${2:-output.mp3}"
+TMP_MP3="$(mktemp --suffix=.mp3)"
+
+trap 'rm -f "$TMP_MP3"' EXIT
+
+curl -X POST "http://localhost:8880/v1/audio/speech" \
+  -H "Content-Type: application/json" \
+  -d "{\"model\":\"kokoro\",\"input\":\"$(tr '\n' ' ' < "$INPUT_FILE")\",\"voice\":\"af_heart\",\"response_format\":\"mp3\"}" \
+  --output "$TMP_MP3"
+
+ffmpeg -y -i "$TMP_MP3" -filter:a "atempo=0.65" "$OUTPUT_MP3"
+rclone copy "$OUTPUT_MP3" tts:voice/
+echo "Done! Output: $OUTPUT_MP3"
+
+------------
+chmod +x tts.sh
+
+------------
+
+------------
 mkdir my-wordpress
 cd my-wordpress
 

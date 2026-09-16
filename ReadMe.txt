@@ -4,6 +4,9 @@ https://chatgpt.com/c/6aaa2647-ed54-83ea-aaf4-58ae966e5a51
 
 install docker desktop by using microsoft store
 
+-----------
+
+go to Settings, resource, wsl integrantion
 
 
 

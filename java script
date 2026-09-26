@@ -33,7 +33,7 @@ command::
 
 content::
 Inheritance is useful, but composition is often more flexible.
-Composition. HAS A relationship.
+Composition. Part A relationship.
 Why composition can be better.
 Less coupling. Inheritance tightly connects the child to the parent.
 More flexibility. Composition allows us to combine different objects without creating a large class hierarchy.
@@ -43,11 +43,13 @@ command::
 ./tts.sh input.txt "93.Inheritance is useful, but composition is often more flexible.mp3"
 
 content::
-Composition is a strong HAS-A relationship where one class contains an object of another class and controls the child object's lifetime.
+Composition is a strong Part A relationship where one class contains an object of another class and controls the child object's lifetime.
 The contained object depends on the parent object. If the parent object is destroyed, its contained object is also destroyed.
 Composition promotes code reuse and flexible design.
 command::
 ./tts.sh input.txt "94.Composition.mp3"
+
+
 
 
 

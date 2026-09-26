@@ -31,5 +31,21 @@ Less flexibility. Too much inheritance can make code harder to change. Sometimes
 command::
 ./tts.sh input.txt "92.inheritance has some limitation.mp3"
 
+content::
+Inheritance is useful, but composition is often more flexible.
+Composition. HAS A relationship.
+Why composition can be better.
+Less coupling. Inheritance tightly connects the child to the parent.
+More flexibility. Composition allows us to combine different objects without creating a large class hierarchy.
+Easier to change. With composition, we can replace a component at runtime.
+Inheritance is fixed. The parent-child relationship is decided at compile time.
+command::
+./tts.sh input.txt "93.Inheritance is useful, but composition is often more flexible.mp3"
+
+
+
+
+
+
 
 

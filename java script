@@ -1,9 +1,35 @@
-What is the IS A relationship in OOPs Java?
 content::
 The IS A relationship represents inheritance in Java, where one class inherits the properties and behaviors of another class. 
 It indicates that a subclass is a specialized form of its superclass.
 The IS A relationship is achieved using the extends keyword.
 It promotes code reusability by allowing a child class to inherit fields and methods from a parent class.
 command::
-./tts.sh input.txt "90. What is the IS A relationship in OOPs Javan.mp3"
+./tts.sh input.txt "90. What is the IS A relationship in OOPs Java.mp3"
+
+content::
+What are the different types of inheritance in Java?
+Inheritance is of four types.
+Single Inheritance. 
+one subclass extends one superclass. 
+Multilevel Inheritance.
+subclass A extends B, and subclass B extends C, it creates a chain of inheritance called multilevel inheritance.
+Hierarchical Inheritance.
+multiple subclasses extend the same parent class.
+Multiple Inheritance.
+One subclass inherits from multiple parents.
+Java does not support multiple inheritance with classes because it can cause ambiguity and complexity.
+Java supports multiple inheritance through interfaces. A class can implement multiple interfaces.
+command::
+./tts.sh input.txt "91.What are the different types of inheritance in Java.mp3"
+
+content::
+inheritance has some limitations.
+Tight coupling. Changes in the parent class can affect its child classes.
+More complexity. Deep inheritance hierarchies can be difficult to understand and maintain.
+No multiple inheritance with classes. A class cannot extend multiple classes in Java.
+Less flexibility. Too much inheritance can make code harder to change. Sometimes composition is a better choice.
+command::
+./tts.sh input.txt "92.inheritance has some limitation.mp3"
+
+
 

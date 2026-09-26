@@ -1,4 +1,119 @@
 
+https://chatgpt.com/c/6ab7c3db-695c-83e9-a729-246b35c07acd
+--------
+
+tts-all-input.py
+import subprocess
+
+
+ALL_INPUT_FILE = "all-input.txt"
+INPUT_FILE = "input.txt"
+
+
+def process_all():
+    with open(ALL_INPUT_FILE, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
+    i = 0
+
+    while i < len(lines):
+
+        # Skip empty lines
+        if not lines[i].strip():
+            i += 1
+            continue
+
+        # -------------------------
+        # Find content::
+        # -------------------------
+        if lines[i].strip() != "content::":
+            i += 1
+            continue
+
+        i += 1
+
+        content_lines = []
+
+        # Read content until command::
+        while i < len(lines) and lines[i].strip() != "command::":
+            content_lines.append(lines[i])
+            i += 1
+
+        if i >= len(lines):
+            print("ERROR: Missing command::")
+            break
+
+        # -------------------------
+        # Skip command::
+        # -------------------------
+        i += 1
+
+        # Read command
+        command_lines = []
+
+        while i < len(lines) and lines[i].strip():
+            command_lines.append(lines[i].rstrip())
+            i += 1
+
+        command = "\n".join(command_lines).strip()
+
+        # Remove extra newline at the end of content
+        content = "".join(content_lines).rstrip() + "\n"
+
+        # -------------------------
+        # Write input.txt
+        # -------------------------
+        with open(INPUT_FILE, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        print()
+        print("=" * 60)
+        print("Writing input.txt:")
+        print("=" * 60)
+        print(content)
+
+        print("Running command:")
+        print(command)
+        print()
+
+        # -------------------------
+        # Run command
+        # -------------------------
+        result = subprocess.run(
+            command,
+            shell=True
+        )
+
+        if result.returncode != 0:
+            print(f"ERROR: Command failed with exit code {result.returncode}")
+            break
+
+        print("Command completed successfully.")
+
+        i += 1
+
+
+if __name__ == "__main__":
+    process_all()
+
+---------
+
+all-input.txt
+
+content::
+hello.
+how are you?
+command::
+./tts.sh input.txt "hi.mp3"
+
+content::
+I am 18.
+I am male.
+command::
+./tts.sh input.txt "introduce.mp3"
+
+--------
+
 how install ubuntu wsl in windows
 https://chatgpt.com/c/6aaa2647-ed54-83ea-aaf4-58ae966e5a51
 

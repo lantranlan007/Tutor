@@ -42,8 +42,12 @@ Inheritance is fixed. The parent-child relationship is decided at compile time.
 command::
 ./tts.sh input.txt "93.Inheritance is useful, but composition is often more flexible.mp3"
 
-
-
+content::
+Composition is a strong HAS-A relationship where one class contains an object of another class and controls the child object's lifetime.
+The contained object depends on the parent object. If the parent object is destroyed, its contained object is also destroyed.
+Composition promotes code reuse and flexible design.
+command::
+./tts.sh input.txt "94.Composition.mp3"
 
 
 

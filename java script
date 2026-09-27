@@ -39,16 +39,34 @@ Less coupling. Inheritance tightly connects the child to the parent.
 More flexibility. Composition allows us to combine different objects without creating a large class hierarchy.
 Easier to change. With composition, we can replace a component at runtime.
 Inheritance is fixed. The parent-child relationship is decided at compile time.
+constructors cannot be inherited in Java.
 command::
 ./tts.sh input.txt "93.Inheritance is useful, but composition is often more flexible.mp3"
 
 content::
-Composition is a strong Part A relationship where one class contains an object of another class and controls the child object's lifetime.
-The contained object depends on the parent object. If the parent object is destroyed, its contained object is also destroyed.
+Composition is a Part A relationship.
+one class contains an object of another class and controls the child object's lifetime.
+The contained object depends on the parent object. 
+If the parent object is destroyed, its contained object is also destroyed.
 Composition promotes code reuse and flexible design.
+Aggregation. Represent it by using the empty diamond.
+Composition. Represent it by using the filled diamond.
 command::
 ./tts.sh input.txt "94.Composition.mp3"
 
+content::
+Polymorphism. One thing, many forms.
+The same method name can have different behaviors.
+Java achieves polymorphism through method overloading and method overriding.
+It makes code more flexible, reusable, and easier to maintain.
+Method Overloading. Compile time polymorphism.
+Same method name, different parameters.
+Decided by the compiler.
+Method Overriding. Runtime polymorphism.
+Child class provides its own implementation of a parent method.
+Decided at runtime.
+command::
+./tts.sh input.txt "95.Polymorphism.mp3"
 
 
 

@@ -80,7 +80,19 @@ command::
 content::
 Method Overriding is when a child class provides its own implementation of a method that already exists in the parent class.
 Used to achieve runtime polymorphism in Java.
+command::
 ./tts.sh input.txt "97.Method Overriding.mp3"
+
+content::
+Method Overloading.
+a class has multiple methods with the same name but different parameters.
+Methods must differ in the number of parameters, type of parameters, or order of parameters.
+It allows the same method name to handle different types of input.
+Used to achieve compile-time polymorphism in Java.
+command::
+./tts.sh input.txt "98.Method Overloading.mp3"
+
+
 
 
 

@@ -121,8 +121,12 @@ Parent method. protected. Child. public.protected. cannot use private.
 command::
 ./tts.sh input.txt "102. Can we change the scope of the overridden method in the subclass.mp3"
 
-
-
+content::
+In Java, virtual functions are methods whose implementation is decided at runtime based on the actual object.
+Java does not normally use the keyword virtual like C++, because instance methods are virtual by default.
+static, private, and final methods are not virtual, overridable in Java.
+command::
+./tts.sh input.txt "103. virtual functions.mp3"
 
 
 

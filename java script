@@ -128,6 +128,52 @@ static, private, and final methods are not virtual, overridable in Java.
 command::
 ./tts.sh input.txt "103. virtual functions.mp3"
 
+content::
+Abstraction hides implementation details and shows only the important features.
+focus on what an object does, rather than how it does it.
+Achieved by using abstract classes and interfaces in Java.
+Helps make code simpler, flexible, and easier to maintain.
+command::
+./tts.sh input.txt "104. Abstraction.mp3"
 
+content::
+An abstract class is a class declared with the abstract keyword. We cannot create an object of an abstract class directly.
+It can contain both abstract methods and concrete methods.
+Used to achieve abstraction and promote code reuse through inheritance.
+command::
+./tts.sh input.txt "105. Abstraction class.mp3"
+
+content::
+An abstract method is used when the parent class defines what a method should do, but the child class decides how to implement it.
+command::
+./tts.sh input.txt "106. When are Abstract Methods Used.mp3"
+
+content::
+Parent is Serializable. Child is automatically Serializable.
+To prevent Child serialization. override write Object method and throw NotSerializableException.
+transient only prevents specific fields from being serialized. it does not make the child object itself non-serializable
+command::
+./tts.sh input.txt "107. avoid serialization in the child class if the base class is implementing the Serializable interface.mp3"
+
+content::
+The Java Collection Framework provides several interfaces for storing and managing data.
+List. Stores elements in an ordered sequence and allows duplicates.
+ArrayList, LinkedList.
+Set. Stores unique elements and does not allow duplicates.
+HashSet. LinkedHashSet. TreeSet.
+Queue. Stores elements for processing in a specific order, usually First In First Out.
+Examples. PriorityQueue, LinkedList.
+Deque. A double-ended queue that allows adding and removing elements from both ends.
+Examples. ArrayDeque, LinkedList.
+Map. Stores data as key-value pairs. Keys are unique, but values can be duplicated.
+HashMap, LinkedHashMap, TreeMap.
+command::
+./tts.sh input.txt "108. Collection Framework.mp3"
+
+content::
+We can synchronize an ArrayList using Collections synchronized List or use Copy On Write Array List for thread safe access.
+When iterating over a synchronized List, you should still synchronize the iteration.
+command::
+./tts.sh input.txt "109. How can you synchronize an ArrayList in Java.mp3"
 
 

@@ -77,7 +77,10 @@ The child's overridden method is executed at runtime.
 command::
 ./tts.sh input.txt "96.Runtime polymorphism or Dynamic Method Dispatch.mp3"
 
-
+content::
+Method Overriding is when a child class provides its own implementation of a method that already exists in the parent class.
+Used to achieve runtime polymorphism in Java.
+./tts.sh input.txt "97.Method Overriding.mp3"
 
 
 

@@ -68,6 +68,14 @@ Decided at runtime.
 command::
 ./tts.sh input.txt "95.Polymorphism.mp3"
 
+content::
+Runtime polymorphism or Dynamic Method Dispatch is a feature where the method to execute is decided at runtime based on the actual object, not the reference type.
+It allows a parent class reference to call an overridden method of a child class.
+Achieved through method overriding.
+A parent reference can refer to a child object.
+The child's overridden method is executed at runtime.
+command::
+./tts.sh input.txt "96.Runtime polymorphism or Dynamic Method Dispatch.mp3"
 
 
 

@@ -183,3 +183,17 @@ or another concurrent collection such as Copy On Write Array List.
 command::
 ./tts.sh input.txt "110. Why do we need a synchronized ArrayList when we have Vectors.mp3"
 
+content::
+Type erasure means that Java removes most generic type information at compile time.
+Generics are mainly a compile-time feature.
+Type erasure removes generic type information before runtime.
+Java uses type erasure mainly to maintain backward compatibility with older Java code that existed before generics were introduced.
+An important difference between arrays and generics is how they enforce type checking. 
+Specifically, arrays store and check type information at runtime. 
+Generics, however, check for type errors at compile-time and don’t have type information at runtime.
+Java does not allow the direct creation of generic arrays because of type erasure.
+Generic type information is removed at runtime, while arrays perform type checking at runtime, which can lead to type-safety issues.
+Generics are checked at compile time, whereas arrays are checked at runtime.
+Due to type erasure, the actual generic type is not available at runtime.
+Allowing generic arrays could result in unexpected runtime errors and violate type safety.
+./tts.sh input.txt "111. Why do we need a synchronized ArrayList when we have Vectors.mp3"

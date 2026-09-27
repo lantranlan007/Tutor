@@ -92,6 +92,37 @@ Used to achieve compile-time polymorphism in Java.
 command::
 ./tts.sh input.txt "98.Method Overloading.mp3"
 
+content::
+static methods are part of the class rather than the object so we can't override static methods.
+command::
+./tts.sh input.txt "99.Can we override the static method.mp3"
+
+content::
+An overloaded method can be overridden individually.
+command::
+./tts.sh input.txt "100.An overloaded method can be overridden individually.mp3"
+
+content::
+Can main be overridden?
+No. Because main() is static.
+Can main be overloaded?
+Yes. Because you can define multiple main methods with different parameter lists.
+command::
+./tts.sh input.txt "101. main be overloaded.mp3"
+
+content::
+Can we change the scope of the overridden method in the subclass?
+Yes, a subclass can increase the visibility of an overridden method, but it cannot reduce it. 
+Java does not allow an overridden method to have a more restrictive access modifier than the method in the parent class.
+This rule ensures that the overridden method remains accessible wherever the parent method was accessible.
+example.
+Parent method. public. Child. public. cannot use protected, private.
+Parent method. protected. Child. public.protected. cannot use private.
+command::
+./tts.sh input.txt "102. Can we change the scope of the overridden method in the subclass.mp3"
+
+
+
 
 
 

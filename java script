@@ -176,4 +176,7 @@ When iterating over a synchronized List, you should still synchronize the iterat
 command::
 ./tts.sh input.txt "109. How can you synchronize an ArrayList in Java.mp3"
 
+We don't generally use Vector for new code because it is a legacy class. 
+We usually prefer ArrayList and, when thread-safe list operations are required, use Collections synchronized List.
+or another concurrent collection such as Copy On Write Array List.
 

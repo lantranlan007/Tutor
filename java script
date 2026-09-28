@@ -261,7 +261,7 @@ command::
 content::
 A Set is an interface in the Java Collections Framework that represents a collection that does not allow duplicate elements.
 Different Set implementations provide different ordering and performance characteristics.
-HashSet. No guaranteed order.	Fast insertion and lookup.
+HashSet. No guaranteed order. Uses hashing to store elements and provide fast search, insertion, and deletion operations.
 LinkedHashSet. Insertion order. Maintains the order elements were added.
 TreeSet. Sorted order	Sorts elements using natural ordering or a Comparator.
 command::

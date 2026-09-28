@@ -217,7 +217,21 @@ ArrayList uses an internal array to store its elements.
 When the array becomes full, ArrayList creates a larger array and copies the existing elements into the new array.
 In current Java implementations, the capacity typically grows by about 50% when more space is needed.
 command::
-./tts.sh input.txt "114. How does the size of ArrayList grow dynamically? And also state how it is implemented internally.mp3"
+./tts.sh input.txt "114. How does the size of ArrayList grow dynamically And also state how it is implemented internally.mp3"
+
+content::
+We can make an ArrayList read-only by using method unmodifiable List of Collections.
+unmodifiable List does not create a separate copy. If the original list is changed, those changes can still be seen through read Only List.
+./tts.sh input.txt "115. How to make Java ArrayList Read-Only.mp3"
+
+content::
+A PriorityQueue is a queue where elements are processed based on their priority, rather than strictly by insertion order.
+By default, the smallest element has the highest priority and is removed first.
+./tts.sh input.txt "116. What is a priority queue in Java.mp3"
+
+
+
+
 
 
 

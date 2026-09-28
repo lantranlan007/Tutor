@@ -222,15 +222,30 @@ command::
 content::
 We can make an ArrayList read-only by using method unmodifiable List of Collections.
 unmodifiable List does not create a separate copy. If the original list is changed, those changes can still be seen through read Only List.
+command::
 ./tts.sh input.txt "115. How to make Java ArrayList Read-Only.mp3"
 
 content::
 A PriorityQueue is a queue where elements are processed based on their priority, rather than strictly by insertion order.
 By default, the smallest element has the highest priority and is removed first.
+command::
 ./tts.sh input.txt "116. What is a priority queue in Java.mp3"
 
-
-
+content::
+LinkedList stores elements in a doubly linked list structure. 
+Each element is stored inside a node that contains the element and links to the previous and next nodes.
+Singly. one link. point to next.
+Doubly. two links. previous and next.
+LinkedList extends AbstractSequentialList and implements the List and Deque interfaces.
+Properties of LinkedList. 
+Non-synchronized.
+Maintains insertion order.
+Allows duplicate elements.
+Allows null elements.
+Can be used as a List, Queue, or Deque.
+Because it implements both List and Deque, it can be used for different purposes.
+command::
+./tts.sh input.txt "117. LinkedList.mp3"
 
 
 

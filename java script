@@ -306,8 +306,22 @@ Common implementations include Array Blocking Queue and Linked Blocking Queue.
 command::
 ./tts.sh input.txt "122. BlockingQueue.mp3"
 
+content::
+Concurrent Hash Map is a thread-safe implementation of the Map interface from the java util concurrent package.
+It is designed for applications where multiple threads need to read and modify a map concurrently.
+Unlike Hashtable, Concurrent Hash Map provides better concurrency and scalability.
+It does not allow null keys or null values.
+command::
+./tts.sh input.txt "123. ConcurrentHashMap.mp3"
 
-
-
+content::
+CAS stands for Compare And Swap (also called Compare And Set).
+It is a low level atomic operation used in Java's concurrent programming to update a value without using a traditional lock.
+Concurrent Hash Map is a thread safe implementation of the Map interface designed for concurrent access by multiple threads.
+It allows multiple threads to read and update the map safely without locking the entire map.
+In Java 8 and later, it uses techniques such as Compare And Swap and fine-grained synchronization, and heavily-collided bins can be converted to Red-Black trees.
+It does not allow null keys or null values.
+command::
+./tts.sh input.txt "124. ConcurrentHashMap.mp3"
 
 

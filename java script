@@ -196,4 +196,30 @@ Generic type information is removed at runtime, while arrays perform type checki
 Generics are checked at compile time, whereas arrays are checked at runtime.
 Due to type erasure, the actual generic type is not available at runtime.
 Allowing generic arrays could result in unexpected runtime errors and violate type safety.
-./tts.sh input.txt "111. Why do we need a synchronized ArrayList when we have Vectors.mp3"
+command::
+./tts.sh input.txt "111. Why can’t we create a generic array.mp3"
+
+content::
+Arrays have a fixed size.
+ArrayList is a resizable array. 
+It uses an array internally and provides additional features, such as dynamic resizing and convenient methods for adding, removing elements.
+command::
+./tts.sh input.txt "112. array vs arrayList.mp3"
+
+content::
+convert an Array to ArrayList using static method asList of the Arrays class.
+convert ArrayList to Array use toArray method of object.
+command::
+./tts.sh input.txt "113. convert array arrayList.mp3"
+
+content::
+ArrayList uses an internal array to store its elements. 
+When the array becomes full, ArrayList creates a larger array and copies the existing elements into the new array.
+In current Java implementations, the capacity typically grows by about 50% when more space is needed.
+command::
+./tts.sh input.txt "114. How does the size of ArrayList grow dynamically? And also state how it is implemented internally.mp3"
+
+
+
+
+

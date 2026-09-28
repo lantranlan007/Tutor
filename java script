@@ -324,4 +324,22 @@ It does not allow null keys or null values.
 command::
 ./tts.sh input.txt "124. ConcurrentHashMap.mp3"
 
+content::
+class can be used as a Map key. 
+For a HashMap, the class should correctly override equals and hashCode, because the map uses them to locate and compare keys. 
+For a TreeMap, the keys must have a natural ordering through Comparable or be ordered using a Comparator. 
+Keys should also ideally be immutable, especially for fields used by equals and hashCode.
+command::
+./tts.sh input.txt "125. Can you use any class as a Map key.mp3"
+
+content::
+An Iterator is an interface in Java used to traverse (iterate through) elements of a collection one by one.
+It is available in the java.util package.
+hasNext. Returns true if another element is available.
+next. Returns the next element.
+remove. Removes the last element returned by the iterator.
+command::
+./tts.sh input.txt "126. Iterator.mp3"
+
+
 

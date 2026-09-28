@@ -267,6 +267,37 @@ TreeSet. Sorted order	Sorts elements using natural ordering or a Comparator.
 command::
 ./tts.sh input.txt "119. Set.mp3"
 
+content::
+A Map is an interface in the Java Collections Framework.
+stores data as key-value pairs.
+Does not allow duplicate keys.
+Duplicate values are allowed.
+Each key is used to retrieve its corresponding value.
+Common implementations include HashMap, LinkedHashMap, and TreeMap.
+TreeMap. Maintains keys in ascending order by default.
+Can use a custom Comparator for different sorting.
+Does not allow null keys when using natural ordering.
+Allows multiple null values.
+Is not synchronized.
+Provides log n time complexity for operations such as put, get, and remove.
+command::
+./tts.sh input.txt "120. Map.mp3"
+
+content::
+EnumSet is a specialized Set implementation designed specifically for storing enum values.
+It is part of the java util package and provides a high-performance way to work with sets of enum constants.
+Features of EnumSet.
+Can store only enum values.
+Does not allow duplicate elements.
+Maintains the natural order of enum constants. the order in which they are declared.
+Does not allow null elements.
+It is not synchronized.
+It is generally more efficient than using a general-purpose HashSet for enum values.
+It provides useful factory methods such as of, allOf, noneOf, and range.
+command::
+./tts.sh input.txt "121. EnumSet.mp3"
+
+
 
 
 

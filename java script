@@ -338,8 +338,38 @@ It is available in the java.util package.
 hasNext. Returns true if another element is available.
 next. Returns the next element.
 remove. Removes the last element returned by the iterator.
+One important advantage of Iterator is that you can safely remove elements during iteration using iterator remove
 command::
 ./tts.sh input.txt "126. Iterator.mp3"
+
+content::
+We can use a loop to iterate over a collection, and for simple traversal, a for-each loop is usually easier. 
+We use an Iterator when we need more control over the traversal, especially when we need to safely remove elements while iterating.
+Iterator also provides a common way to traverse different types of collections.
+Why use Iterator?
+The biggest reason is safe removal while iterating.
+Using an Iterator does not prevent Concurrent Modification Exception. 
+If using a fail-fast iterator, modifications should be performed through iterator.remove() rather than directly through the collection.
+command::
+./tts.sh input.txt "127. loop vs Iterator.mp3"
+
+content::
+A fail-fast iterator detects that the collection has been structurally modified outside the iterator and typically throws a ConcurrentModificationException.
+Works directly on the original collection.
+Used by collections such as ArrayList, HashMap, and HashSet.
+A fail safe iterator can tolerate modifications to the underlying collection without throwing Concurrent Modification Exception. 
+Some implementations, such as Copy On Write Array List, use a snapshot of the collection, while others, such as Concurrent HashMap, provide weakly consistent iterators rather than snapshot iterators.
+Easy memory trick.
+ArrayList.Fail-fast. modification. Concurrent Modification Exception.
+Copy On Write Array List. Snapshot. modification. no exception.
+Concurrent Hash Map. Weakly consistent. modification. no exception.
+A weakly consistent iterator is an iterator that can continue iterating even while the collection is being modified by another thread or operation.
+A weakly consistent iterator can iterate over a collection while the collection is being modified without throwing ConcurrentModificationException. 
+However, unlike a snapshot iterator, it does not work on a fixed copy. 
+It may reflect some modifications made during iteration, but it does not guarantee that all concurrent changes will be visible. 
+Concurrent Hash Map provides weakly consistent iterators.
+command::
+./tts.sh input.txt "128. fail-fast vs fail-safe Iterator.mp3"
 
 
 

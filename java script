@@ -491,8 +491,49 @@ finalize was an old garbage-collection cleanup method, but it is deprecated and 
 command::
 ./tts.sh input.txt "145. What purpose do the keywords final, finally, and finalize fulfill.mp3"
 
+content::
+A multithreaded Java program is a program that uses multiple threads to execute multiple tasks concurrently. 
+advantages. better CPU utilization, improved performance, better application responsiveness, better communication.
+Better communication. 
+Since threads share the same memory, they can communicate efficiently.
+command::
+./tts.sh input.txt "146. What do you mean by a Multithreaded program in java.mp3"
 
+content::
+two ways to create a thread.
+by extending the Thread class, or by implementing the Runnable interface. 
+In both cases, we implement the task in the run method and start the thread using start.
+command::
+./tts.sh input.txt "147. What are the two ways in which Thread can be created.mp3"
 
+content::
+A process is an independent program in execution with its own memory space. 
+A thread is a lightweight unit of execution within a process. 
+Threads share the memory and resources of their process, while processes have separate memory spaces.
+A thread is a lightweight unit of execution within a process. 
+It allows a Java program to perform multiple tasks concurrently.
+Processes are independent of each other.	
+Threads within the same process are dependent on each other.
+Creating a process is relatively expensive.	
+Creating a thread is relatively less expensive.
+Communication between processes is more difficult.	
+Communication between threads is easier because they share memory.
+If one process crashes, other processes usually continue running.	
+If a thread causes a serious failure, it can affect the entire process.
+command::
+./tts.sh input.txt "147. thread vs process.mp3"
 
+content::
+A thread starts in the NEW state. After calling start method, it enters the RUNNABLE state. 
+It may temporarily become BLOCKED, WAITING, or TIMED WAITING depending on what it is doing. 
+When the run method completes, the thread enters the TERMINATED state.
+command::
+./tts.sh input.txt "148. Describe the life cycle of the thread.mp3"
 
+content::
+The static method sleep of the Thread class temporarily pauses the currently executing thread for a specified amount of time. 
+It puts the thread into the TIMED WAITING state and throws InterruptedException. 
+It does not release any lock held by the thread.
+command::
+./tts.sh input.txt "149. The static method sleep of the Thread class.mp3"
 

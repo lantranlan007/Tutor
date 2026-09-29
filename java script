@@ -521,19 +521,26 @@ Communication between threads is easier because they share memory.
 If one process crashes, other processes usually continue running.	
 If a thread causes a serious failure, it can affect the entire process.
 command::
-./tts.sh input.txt "147. thread vs process.mp3"
+./tts.sh input.txt "148. thread vs process.mp3"
 
 content::
 A thread starts in the NEW state. After calling start method, it enters the RUNNABLE state. 
 It may temporarily become BLOCKED, WAITING, or TIMED WAITING depending on what it is doing. 
 When the run method completes, the thread enters the TERMINATED state.
 command::
-./tts.sh input.txt "148. Describe the life cycle of the thread.mp3"
+./tts.sh input.txt "149. Describe the life cycle of the thread.mp3"
 
 content::
 The static method sleep of the Thread class temporarily pauses the currently executing thread for a specified amount of time. 
 It puts the thread into the TIMED WAITING state and throws InterruptedException. 
 It does not release any lock held by the thread.
 command::
-./tts.sh input.txt "149. The static method sleep of the Thread class.mp3"
+./tts.sh input.txt "150. The static method sleep of the Thread class.mp3"
+
+content::
+The static method sleep of the Thread class temporarily pauses the currently executing thread for a specified amount of time. 
+It puts the thread into the TIMED WAITING state and throws InterruptedException. 
+It does not release any lock held by the thread.
+command::
+./tts.sh input.txt "151. The static method sleep of the Thread class.mp3"
 

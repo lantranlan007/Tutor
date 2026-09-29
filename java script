@@ -371,5 +371,61 @@ Concurrent Hash Map provides weakly consistent iterators.
 command::
 ./tts.sh input.txt "128. fail-fast vs fail-safe Iterator.mp3"
 
+content::
+Collection is an interface in java.util that represents. it is the parent interface of List, Set, and Queue. 
+Collections is a utility class in java.util that provides static methods such as sort, reverse, shuffle, min, and max for working with collections.
+command::
+./tts.sh input.txt "129. Collection vs Collections.mp3"
+
+content::
+An array has a fixed size, while an Array List can dynamically grow or shrink. 
+An array can store both primitive types and objects, while ArrayList stores objects and uses wrapper classes for primitives. 
+Arrays use length to get their size, while Array List uses size.
+Array List also provides convenient methods such as add, remove, get, and set.
+command::
+./tts.sh input.txt "130. array vs Array List.mp3"
+
+content::
+An array is a fixed-size data structure built into the Java language that can store both primitive types and objects. 
+A Collection is part of the Java Collections Framework and provides interfaces and classes such as List, Set, and Queue for storing and manipulating objects. 
+Collections are generally more flexible because they can dynamically grow or shrink and provide many built-in operations.
+command::
+./tts.sh input.txt "131. What is the difference between Array and Collection in Java.mp3"
+
+content::
+ArrayList uses a dynamic array internally, while LinkedList uses a doubly linked list. 
+ArrayList provides fast random access using an index, with big O of 1 access time. 
+LinkedList has big o of n access time because it may need to traverse the nodes. 
+LinkedList is efficient for adding and removing elements at the beginning or end.
+ArrayList is generally preferred when we frequently access elements by index.
+command::
+./tts.sh input.txt "132. ArrayList vs LinkedList.mp3"
+
+content::
+Comparable and Comparator are used for sorting objects. 
+Comparable defines the natural ordering of a class and requires the class to implement Comparable and override compare To.
+Comparator defines custom ordering, separately from the class, and implements the compare method. 
+Comparable is useful when a class has one primary or natural ordering.
+Comparator is useful when we need multiple different sorting strategies.
+command::
+./tts.sh input.txt "133. Comparable and Comparator.mp3"
+
+content::
+Iterator and Enumeration are used to traverse collections. 
+Enumeration is a legacy interface mainly used with classes such as Vector and Hashtable.
+Iterator is part of the modern Collections Framework. 
+Iterator provides has Next, next, and remove, whereas Enumeration provides has More Elements and next Element and does not support removing elements. 
+Therefore, Iterator is generally preferred for modern Java code.
+command::
+./tts.sh input.txt "134. Iterator and Enumeration.mp3"
+
+content::
+HashMap and Hashtable both store key-value pairs.
+HashMap is not synchronized and allows one null key and multiple null values, while Hashtable is synchronized and does not allow null keys or null values. 
+HashMap is generally preferred for modern non-concurrent applications, while ConcurrentHashMap is usually preferred when concurrent access is required. 
+Hashtable is mainly used for legacy compatibility.
+command::
+./tts.sh input.txt "135. HashMap and Hashtable.mp3"
+
 
 

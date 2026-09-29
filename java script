@@ -427,5 +427,72 @@ Hashtable is mainly used for legacy compatibility.
 command::
 ./tts.sh input.txt "135. HashMap and Hashtable.mp3"
 
+content::
+Exception handling means handling runtime and other exceptional conditions so that the program can respond instead of terminating unexpectedly. 
+Java provides try, catch, finally, throw, and throws for exception handling.
+command::
+./tts.sh input.txt "136. Exception handling.mp3"
+
+content::
+How many types of exceptions can occur in a Java program?
+checked exceptions and unchecked exceptions. 
+Checked exceptions are checked by the compiler and must be handled or declared. 
+Unchecked exceptions are subclasses of RuntimeException and occur at runtime. 
+Java also has Errors, such as Out Of Memory Error and Stack Over flow Error, but Errors are not technically exceptions.
+command::
+./tts.sh input.txt "137. How many types of exceptions can occur in a Java program.mp3"
+
+content::
+Both Error and Exception extend Throwable. 
+An Exception generally represents an abnormal condition that an application may be able to handle, such as an invalid input. 
+An Error generally represents a serious Java Virtual Machine or system-level problem, such as Out Of Memory Error or Stack Over flow Error, and applications generally should not try to recover from it.
+command::
+./tts.sh input.txt "138. Difference between an Error and an Exception.mp3"
+
+content::
+Runtime exceptions are unchecked exceptions that occur during program execution. 
+They are subclasses of RuntimeException, and the compiler does not require them to be caught or declared using throws. 
+Common examples include Null Pointer Exception, Arithmetic Exception, Array Index Out Of Bounds Exception, and Illegal Argument Exception.
+command::
+./tts.sh input.txt "140. Explain Runtime Exceptions.mp3"
+
+content::
+The Java exception hierarchy starts with Throwable, which has two main subclasses: Error and Exception. 
+Exception has RuntimeException and Other exceptions.
+Runtime exceptions are unchecked exceptions.
+Other exceptions are checked exceptions.
+command::
+./tts.sh input.txt "141. Java exception hierarchy.mp3"
+
+content::
+A try block does not have to be followed by a catch block. It can be followed by a finally block instead. 
+However, a try block must be followed by at least one catch block or a finally block.
+command::
+./tts.sh input.txt "142. Is it necessary that each try block must be followed by a catch block.mp3"
+
+content::
+Exception propagation is the process of an exception moving up the call stack from the method where it occurred to its calling method, until it is handled by a catch block.
+For checked exceptions, the method generally must either.
+handle the exception with try-catch, or, declare it with throws.
+For unchecked exceptions such as Null Pointer Exception or Arithmetic Exception, you don't have to declare them with throws.
+command::
+./tts.sh input.txt "143. What is exception propagation.mp3"
+
+content::
+Normally, the finally block executes even when an exception occurs. 
+However, if System exit is called before reaching finally, the Java Virtual Machine terminates immediately, so the finally block will not execute.
+command::
+./tts.sh input.txt "144. What will happen if you put System exit on the try or catch block.mp3"
+
+content::
+final is used to prevent modification, overriding, or inheritance.
+finally is used with exception handling to execute cleanup code after try, catch. 
+finalize was an old garbage-collection cleanup method, but it is deprecated and should not be used in modern Java.
+command::
+./tts.sh input.txt "145. What purpose do the keywords final, finally, and finalize fulfill.mp3"
+
+
+
+
 
 

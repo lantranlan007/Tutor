@@ -580,7 +580,19 @@ sleep does not put a thread into the WAITING state.
 command::
 ./tts.sh input.txt "153. What are the ways in which a thread can enter the waiting state.mp3"
 
+content::
+Every Java object has a wait method because wait is defined in the Object class, and every Java class ultimately inherits from Object
 A monitor is an internal mechanism associated with every Java object.
-It provides mutual exclusion through a lock and supports thread communication through wait, notify, and notifyAll.
+It provides mutual exclusion through a lock and supports thread communication through wait, notify, and notify All.
 A thread must own an object's monitor to call its wait or notify methods.
+wait must be called while the current thread owns the monitor of the object.
+Usually, we call it inside a synchronized block or synchronized method.
+Otherwise, Java throws Illegal Monitor State Exception.
+Don't think of the monitor as a separate Java object that you can directly access.
+The Java Virtual Machine manages the monitor automatically.
+command::
+./tts.sh input.txt "154. monitor wait.mp3"
+
+
+
 

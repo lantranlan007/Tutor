@@ -538,9 +538,10 @@ command::
 ./tts.sh input.txt "150. The static method sleep of the Thread class.mp3"
 
 content::
-The static method sleep of the Thread class temporarily pauses the currently executing thread for a specified amount of time. 
-It puts the thread into the TIMED WAITING state and throws InterruptedException. 
-It does not release any lock held by the thread.
+sleep. pauses the current thread for a specified time without releasing the lock. belongs to the Thread class.
+wait makes a thread wait for another thread's notification and releases the lock while waiting. belongs to the Object class.
+Use sleep when you want a time delay.
+Use wait when you want to wait for another thread or event.
 command::
-./tts.sh input.txt "151. The static method sleep of the Thread class.mp3"
+./tts.sh input.txt "151. sleep vs wait.mp3"
 

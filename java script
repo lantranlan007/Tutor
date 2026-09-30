@@ -590,6 +590,9 @@ Usually, we call it inside a synchronized block or synchronized method.
 Otherwise, Java throws Illegal Monitor State Exception.
 Don't think of the monitor as a separate Java object that you can directly access.
 The Java Virtual Machine manages the monitor automatically.
+Mutual exclusion means only one thread can access a shared resource at a time.
+Mutual exclusion means one thread at a time.
+It prevents multiple threads from changing the same data at the same time and causing incorrect results.
 command::
 ./tts.sh input.txt "154. monitor wait.mp3"
 

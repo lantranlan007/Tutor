@@ -600,8 +600,38 @@ content::
 Iterator can traverse a collection only in the forward direction and can remove elements.
 ListIterator is specifically for List collections and supports both forward and backward traversal, as well as adding and updating elements.
 command::
-./tts.sh input.txt "154. Iterator vs ListIterator.mp3"
+./tts.sh input.txt "155. Iterator vs ListIterator.mp3"
 
+content::
+Even with one CPU, multiple threads can run because the operating system switches the CPU between threads very quickly.
+This is called context switching.
+On a single-CPU system, multithreading is achieved through rapid context switching.
+The CPU executes one thread for a short period, saves its state, and then executes another thread.
+Because this switching happens very quickly, it gives the appearance of parallel execution.
+command::
+./tts.sh input.txt "156. How does multi-threading take place on a computer with a single CPU.mp3"
+
+content::
+Java thread priorities range from 1 to 10. 
+The minimum priority is 1, normal priority is 5, and maximum priority is 10. 
+By default, a newly created thread has priority 5.
+command::
+./tts.sh input.txt "157. What are the different types of Thread Priorities in Java.mp3"
+
+content::
+Garbage Collection is necessary in Java to automatically identify and remove objects that are no longer reachable, freeing heap memory for new objects. 
+It reduces the need for manual memory management and helps prevent memory exhaustion.
+Garbage collection makes Java memory-efficient by automatically removing unreferenced objects from the heap memory and freeing space for new objects.
+command::
+./tts.sh input.txt "158. Why Garbage Collection is necessary in Java.mp3"
+
+content::
+The main drawback of garbage collection is that it consumes CPU resources and may temporarily pause application threads.
+that causes slows down the performance of the application.
+cannot predict exactly when it runs.
+limited control over when garbage collection occurs.
+command::
+./tts.sh input.txt "159. The main drawback of garbage collection.mp3"
 
 
 

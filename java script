@@ -545,3 +545,10 @@ Use wait when you want to wait for another thread or event.
 command::
 ./tts.sh input.txt "151. sleep vs wait.mp3"
 
+content::
+The main thread is the thread created by the JVM to execute the main() method. 
+It is the starting point of a Java application's execution. 
+The main thread can create and start other threads. 
+When the main thread finishes, the Java Virtual Machine continues running if other non-daemon threads are still active.
+command::
+

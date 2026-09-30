@@ -563,5 +563,24 @@ Supporting other application threads.
 The Java Virtual Machine does not wait for daemon threads to finish.
 If all non-daemon threads finish, the Java Virtual Machine can exit even if daemon threads are still running.
 command::
-./tts.sh input.txt "151. main thread vs non-daemon thread vs daemon thread .mp3"
+./tts.sh input.txt "152. main thread vs non-daemon thread vs daemon thread .mp3"
+
+content::
+WAITING. I don't know when I'll continue.
+TIMED WAITING. I'll wait, but only for this amount of time.
+sleep always has a time period.
+No time specified. WAITING.
+Time specified. TIMED WAITING.
+Thread join. The current thread waits for another thread to finish.
+Object wait. The thread waits until another thread calls. notify.
+It puts the thread into the TIMED WAITING state because the thread waits for a specified amount of time.
+A thread becomes BLOCKED when it wants to enter a synchronized block or method, but another thread already owns the lock.
+A thread becomes WAITING when it deliberately waits for another thread to perform an action.
+sleep does not put a thread into the WAITING state. 
+command::
+./tts.sh input.txt "153. What are the ways in which a thread can enter the waiting state.mp3"
+
+A monitor is an internal mechanism associated with every Java object.
+It provides mutual exclusion through a lock and supports thread communication through wait, notify, and notifyAll.
+A thread must own an object's monitor to call its wait or notify methods.
 

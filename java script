@@ -550,5 +550,18 @@ The main thread is the thread created by the JVM to execute the main() method.
 It is the starting point of a Java application's execution. 
 The main thread can create and start other threads. 
 When the main thread finishes, the Java Virtual Machine continues running if other non-daemon threads are still active.
+A non-daemon thread is a normal thread that keeps the Java Virtual Machine alive while it is running. 
+By default, newly created threads are non-daemon. 
+The Java Virtual Machine terminates when all non-daemon threads have finished, even if daemon threads are still running.
+A background thread is a thread that performs supporting work behind the main application tasks. 
+A daemon thread is commonly used for background work because it does not prevent the JVM from terminating.
+Daemon threads are useful for background or support tasks, such as
+Garbage collection.
+Background monitoring.
+Cleanup tasks.
+Supporting other application threads.
+The Java Virtual Machine does not wait for daemon threads to finish.
+If all non-daemon threads finish, the Java Virtual Machine can exit even if daemon threads are still running.
 command::
+./tts.sh input.txt "151. main thread vs non-daemon thread vs daemon thread .mp3"
 

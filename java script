@@ -698,6 +698,23 @@ The DriverManager class in JDBC manages registered database drivers and establis
 command::
 ./tts.sh input.txt "167. What is the role of the JDBC DriverManager class.mp3"
 
+content::
+Iterable is an interface that represents a collection whose elements can be traversed and provides the iterator method.
+Iterator is an interface used to traverse elements one by one using methods such as has Next and next.
+command::
+./tts.sh input.txt "168. Differentiate between Iterable and Iterator.mp3"
 
-The DriverManager class in JDBC manages registered database drivers and establishes connections between Java applications and databases using the getConnection() method.
+content::
+List is a collection that allows duplicate elements and supports index-based access.
+Set is a collection that does not allow duplicate elements and does not support index-based access.
+The ordering of a Set depends on its implementation.
+Hash Set uses hash Code method and equals method to store and find elements. However, not every Set implementation uses hash Code.
+Hash Set uses hash Code to determine the bucket and equals to check for duplicate elements.
+However, Tree Set uses comparison to organize and identify elements, rather than hashing.
+A List can store multiple null elements, while a Set can store at most one null element if its implementation permits null.
+Not all Set implementations allow null. For example, Tree Set using natural ordering does not allow null.
+command::
+./tts.sh input.txt "169. Differentiate between List and Set.mp3"
+
+
 

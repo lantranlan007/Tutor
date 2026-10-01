@@ -679,9 +679,25 @@ It provides methods to retrieve data row by row from the returned result.
 command::
 ./tts.sh input.txt "165. What does the JDBC ResultSet interface.mp3"
 
+content::
 Row Set is a JDBC interface that extends ResultSet and provides a more flexible way to access and manipulate tabular data. 
 A Row Set can be either connected or disconnected from the database.
 JDBC Row Sets are commonly classified into five types: Jdbc Row Set, Cached Row Set, Web Row Set, Filtered Row Set, and Join Row Set. 
 They provide different ways to access, store, filter, exchange, and combine database data.
+Easy way to remember.
+Jdbc Row Set. Connected.
+Cached Row Set. Disconnected.
+Web Row Set. XML.
+Filtered Row Set. Filter.
+Join Row Set. Join.
+command::
+./tts.sh input.txt "166. What is the JDBC Rowset.mp3"
 
+content::
+The DriverManager class in JDBC manages registered database drivers and establishes connections between Java applications and databases using the get Connection method.
+command::
+./tts.sh input.txt "167. What is the role of the JDBC DriverManager class.mp3"
+
+
+The DriverManager class in JDBC manages registered database drivers and establishes connections between Java applications and databases using the getConnection() method.
 

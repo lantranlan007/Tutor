@@ -633,5 +633,55 @@ limited control over when garbage collection occurs.
 command::
 ./tts.sh input.txt "159. The main drawback of garbage collection.mp3"
 
+content::
+Minor GC collects the Young Generation and is usually fast. 
+Major GC generally collects the Old Generation and usually takes longer. 
+Full GC performs garbage collection across the entire heap and is typically the most expensive.
+Young Generation means short-lived objects.
+Old Generation means long-lived objects.
+command::
+./tts.sh input.txt "160. Explain the difference between a minor, major, and full garbage collection.mp3"
+
+content::
+A memory leak occurs when an application unintentionally keeps references to objects that are no longer needed. 
+Since those objects are still reachable, the Garbage Collector cannot reclaim their memory. 
+This can increase memory usage, cause more frequent garbage collection, reduce performance, and eventually lead to an Out Of Memory Error.
+command::
+./tts.sh input.txt "161. What is a memory leak, and how does it affect garbage collection.mp3"
+
+content::
+The main classes in the java utility Regular Expression package are Pattern, Matcher, and Pattern Syntax Exception. 
+Pattern represents a compiled regular expression.
+Matcher performs matching operations. 
+PatternSyntaxException is thrown for invalid regular expression syntax.
+command::
+./tts.sh input.txt "162. Name some classes present in java.util.regex package.mp3"
+
+content::
+JDBC stands for Java Database Connectivity.
+It is a Java API that allows Java applications to connect to databases, execute SQL queries, and retrieve or modify data.
+A JDBC Driver is a software component that enables a Java application to communicate with a specific database. 
+It translates JDBC calls from the Java application into database-specific operations.
+command::
+./tts.sh input.txt "163. JDBC.mp3"
+
+content::
+The basic steps are to load the JDBC driver, establish a connection using DriverManager, create a statement or prepared statement, execute the SQL query, process the result, and finally close the resources.
+about loading the driver.
+Older JDBC code often explicitly used.  method forName of class.
+With modern JDBC drivers that support JDBC 4.0 plus, the driver is normally loaded automatically when the driver JAR is on the classpath, so forName method is usually not required.
+command::
+./tts.sh input.txt "164. What are the steps to connect to the database in Java.mp3"
+
+content::
+ResultSet is a JDBC interface that represents the result of a SQL query.
+It provides methods to retrieve data row by row from the returned result.
+command::
+./tts.sh input.txt "165. What does the JDBC ResultSet interface.mp3"
+
+Row Set is a JDBC interface that extends ResultSet and provides a more flexible way to access and manipulate tabular data. 
+A Row Set can be either connected or disconnected from the database.
+JDBC Row Sets are commonly classified into five types: Jdbc Row Set, Cached Row Set, Web Row Set, Filtered Row Set, and Join Row Set. 
+They provide different ways to access, store, filter, exchange, and combine database data.
 
 

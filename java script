@@ -716,5 +716,51 @@ Not all Set implementations allow null. For example, Tree Set using natural orde
 command::
 ./tts.sh input.txt "169. Differentiate between List and Set.mp3"
 
+content::
+List is an ordered collection that stores individual elements, allows duplicates, and supports index-based access.
+Map stores data as key-value pairs, where keys are unique but values can be duplicated.
+A Map retrieves values using keys rather than indexes.
+List maintains insertion order.
+Map do not maintain insertion order.
+command::
+./tts.sh input.txt "170. Differentiate between List and Map.mp3"
 
+content::
+Queue is generally used for sequential processing where elements are processed in FIFO order. 
+Stack is commonly used for recursion, backtracking, Depth-First Search, Undo operations, and other problems that require LIFO processing.
+command::
+./tts.sh input.txt "171. Differentiate between Queue and Stack.mp3"
 
+content::
+PriorityQueue is a queue that processes elements according to priority and allows duplicates.
+TreeSet is a sorted set that stores only unique elements. PriorityQueue uses a heap, while TreeSet is based on a tree structure.
+command::
+./tts.sh input.txt "172. Differentiate between PriorityQueue and TreeSet.mp3"
+
+content::
+A singly linked list has one reference, pointing to the next node, so it can be traversed only forward.
+A doubly linked list has two references, pointing to the previous and next nodes, so it can be traversed in both directions.
+A doubly linked list uses more memory but makes backward traversal and certain deletion operations easier.
+command::
+./tts.sh input.txt "173. Differentiate between the Singly Linked List and Doubly Linked List.mp3"
+
+content::
+Hash Map uses hashing to store key-value pairs and provides average big O of 1 lookup and insertion, but it does not guarantee ordering.
+Tree Map uses a Red Black tree and keeps keys sorted, with big O of log n lookup and insertion.
+Hash Map allows one null key, while TreeMap with natural ordering does not allow a null key.
+command::
+./tts.sh input.txt "174. Differentiate between HashMap and TreeMap.mp3"
+
+content::
+A Queue normally follows FIFO and adds elements at one end and removes them from the other. 
+A Deque, or double-ended queue, allows insertion and removal from both ends. 
+A Deque can also be used to implement both a queue and a stack.
+command::
+./tts.sh input.txt "175. Differentiate between Queue and Deque.mp3"
+
+content::
+Hash Set stores unique elements using hashing and provides average big O of 1 operations, but it does not guarantee ordering.
+Tree Set stores unique elements in sorted order using a tree structure, with big O of log n operations. 
+Hash Set is generally preferred when ordering is not required, while Tree Set is used when sorted elements are needed.
+command::
+./tts.sh input.txt "176. Differentiate between HashSet and TreeSet.mp3"

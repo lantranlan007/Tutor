@@ -764,3 +764,11 @@ Tree Set stores unique elements in sorted order using a tree structure, with big
 Hash Set is generally preferred when ordering is not required, while Tree Set is used when sorted elements are needed.
 command::
 ./tts.sh input.txt "176. Differentiate between HashSet and TreeSet.mp3"
+
+content::
+Objects are created on the heap.
+A local reference is stored in the method's stack frame.
+An instance reference is part of its containing object on the heap.
+A static reference belongs to the class and is associated with the class-level storage.
+command::
+./tts.sh input.txt "177. Objects and reference.mp3"

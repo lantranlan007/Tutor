@@ -14,10 +14,10 @@ It lets each project have its own libraries and versions without affecting other
 step 1. Create a virtual environment.
 go to your project folder.
 use command.
-python 3. space. -m. space .v e n v. space. dot v e n v.
+python 3. space. minus m. space .v e n v. space. dot v e n v.
 explain.
 python 3 means Python interpreter.
--m space .v e n v. Runs Python's built-in virtual environment module.
+minus m space .v e n v. means. Runs Python's built-in virtual environment module.
 dot v e n v. means The folder where the environment is created.
 step 2. Activate the virtual environment.
 for linux, we can use.

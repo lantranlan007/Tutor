@@ -784,7 +784,15 @@ Nested classes mean 2 main categories.
 Static nested class, Inner classes.
 inner class has Member inner class, Local inner class, Anonymous inner class.
 Use a static nested class when the inner class does not need an object of the outer class.
-useful for Helper or model class closely related to outer class.
+Example use. Helper or model class closely related to outer class.
 A member inner class is a non-static class inside another class.
+use when Inner object needs the outer object's data.
+Example use. Iterator, UI component associated with an object.
+Local inner class.
+use when Class is needed only inside one method.
+Example use. Temporary helper logic.
+Anonymous inner class.
+use when You need a small one-time implementation.
+Example use. Event listener, callback, Runnable.
 command::
 ./tts.sh input.txt "178. nested classes.mp3"

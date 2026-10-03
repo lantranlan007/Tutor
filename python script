@@ -7,3 +7,21 @@ An empty set is set Parentheses, while Curly brackets is an empty dictionary.
 command::
 ./tts.sh input.txt "python.1 .list tuple set Dictionary.mp3"
 
+content::
+A Python virtual environment. v e n v.
+is an isolated environment for a Python project. 
+It lets each project have its own libraries and versions without affecting other Python projects.
+step 1. Create a virtual environment.
+go to your project folder.
+use command.
+python 3 space -m space .v e n v. space dot. v e n v.
+explain.
+python 3 means Python interpreter.
+-m space .v e n v. Runs Python's built-in virtual environment module.
+dot. v e n v. means The folder where the environment is created.
+step 2. Activate the virtual environment.
+for linux, we can use.
+source space dot v e n v. forward slash. bin. forward slash. activate.
+for windows, we can use.
+.venv\Scripts\Activate.ps1
+dot v e n v. backward slash. Scripts. backward slash. Activate dot ps1.

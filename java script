@@ -772,3 +772,19 @@ An instance reference is part of its containing object on the heap.
 A static reference belongs to the class and is associated with the class-level storage.
 command::
 ./tts.sh input.txt "177. Objects and reference.mp3"
+
+content::
+There are 4 types of nested classes.
+Static nested class. Declared with static inside another class.
+Non-static inner class.	Regular class inside another class.
+Local inner class. Class declared inside a method/block.
+Anonymous inner class.	Class without a name, usually created inline.
+We can say.
+Nested classes mean 2 main categories.
+Static nested class, Inner classes.
+inner class has Member inner class, Local inner class, Anonymous inner class.
+Use a static nested class when the inner class does not need an object of the outer class.
+useful for Helper or model class closely related to outer class.
+A member inner class is a non-static class inside another class.
+command::
+./tts.sh input.txt "178. nested classes.mp3"

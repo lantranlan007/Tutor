@@ -5,4 +5,5 @@ Set: Unique values, no indexing, changeable. Curly brackets.
 Dictionary: Key value pairs, unique keys, ordered, insertion order, changeable. Curly brackets.
 An empty set is set Parentheses, while Curly brackets is an empty dictionary.
 command::
+./tts.sh input.txt "python.1 .list tuple set Dictionary.mp3"
 

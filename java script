@@ -776,9 +776,9 @@ command::
 content::
 There are 4 types of nested classes.
 Static nested class. Declared with static inside another class.
-Non-static inner class.	Regular class inside another class.
+Non-static inner class. Regular class inside another class.
 Local inner class. Class declared inside a method/block.
-Anonymous inner class.	Class without a name, usually created inline.
+Anonymous inner class. Class without a name, usually created inline.
 We can say.
 Nested classes mean 2 main categories.
 Static nested class, Inner classes.

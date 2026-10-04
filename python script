@@ -43,6 +43,21 @@ It is automatically called when you create a new object.
 Its main purpose is to initialize the object's instance variables.
 It is similar to a constructor in Java.
 self refers to the current object.
-you don't need to declare instance variables separately before using them. You can create them directly using self inside a method, commonly in __init__().
+you don't need to declare instance variables separately before using them. 
+You can create them directly using self inside a method, commonly in init.
+both class methods and static methods belong to a class. 
+a class method can access and modify class variables. Decorator class method.
+a static method cannot access class or instance data. Decorator static method.
+a class variable is a variable that is defined inside a class but outside its methods. 
+It belongs to the class and is shared by all instances of that class (unless an instance overrides it).
+unless an instance overrides it. It means that an instance can have its own variable with the same name as a class variable. 
+When this happens, the instance's variable takes priority when you access that variable through that instance.
+This is called attribute shadowing.
+3 common types of methods.
+Instance method.
+Class method.
+Static method.
+Python does not have a special method type called a local method, but it supports a nested function, which is a function defined inside another method or function.
+a nested function can access the outer method's variables.
 command::
-./tts.sh input.txt "python.3 .virtual environment.mp3"
+./tts.sh input.txt "python.3 .functions.mp3"

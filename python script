@@ -33,3 +33,16 @@ Therefore, you can install them later in another environment.
 Add dot v e n v folder to gitignore so you don't upload your local virtual environment to GitHub.
 command::
 ./tts.sh input.txt "python.2 .virtual environment.mp3"
+
+content::
+Python often uses double underscores in special method names, such as init, len, s t r, add, l t, d e l. 
+These are called special methods or dunder methods (short for double underscore).
+They allow Python objects to work with built-in operations, such as creating objects, printing, adding, and comparing.
+init is a special method called an initializer. 
+It is automatically called when you create a new object. 
+Its main purpose is to initialize the object's instance variables.
+It is similar to a constructor in Java.
+self refers to the current object.
+you don't need to declare instance variables separately before using them. You can create them directly using self inside a method, commonly in __init__().
+command::
+./tts.sh input.txt "python.3 .virtual environment.mp3"

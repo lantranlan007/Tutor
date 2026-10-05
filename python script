@@ -61,3 +61,10 @@ Python does not have a special method type called a local method, but it support
 a nested function can access the outer method's variables.
 command::
 ./tts.sh input.txt "python.3 .functions.mp3"
+
+content::
+Encapsulation. combining data and methods inside a class and controlling access to that data and methods.
+Encapsulation using a private attribute.
+In Python, we commonly use a double underscore to indicate a private attribute.
+Encapsulation using decorator property.
+

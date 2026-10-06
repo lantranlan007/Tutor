@@ -796,3 +796,17 @@ use when You need a small one-time implementation.
 Example use. Event listener, callback, Runnable.
 command::
 ./tts.sh input.txt "178. nested classes.mp3"
+
+content::
+Runnable represents a task that does not return a result.
+Callable represents a task that can return a result and throw checked exceptions if something goes wrong.
+Runnable uses the run method.
+Callable uses the call method. 
+Callable is commonly used with ExecutorService and Future when we need the result of an asynchronous task.
+Thread directly accepts Runnable, but not Callable. Callable is normally used with ExecutorService.
+Future is an object that represents the result of an asynchronous task.
+We get a Future when we submit a Callable or Runnable to an ExecutorService.
+We can use get method to retrieve the result, is Done method to check completion, and cancel method to cancel the task.
+get method will wait if the task isn't finished yet.
+command::
+./tts.sh input.txt "179. What Is the Difference Between the Runnable and Callable Interfaces? How Are They Used.mp3"

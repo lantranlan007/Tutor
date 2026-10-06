@@ -810,3 +810,21 @@ We can use get method to retrieve the result, is Done method to check completion
 get method will wait if the task isn't finished yet.
 command::
 ./tts.sh input.txt "179. What Is the Difference Between the Runnable and Callable Interfaces? How Are They Used.mp3"
+
+content::
+The interrupt flag is a signal that says.
+This thread has been asked to stop what it is doing.
+It does not forcibly stop the thread.
+Every Java Thread has an interrupt status, also called the interrupt flag.
+method interrupt of object thread is used to set the interrupt status.
+when method interrupt of object thread is called, Java sets interrupt flag of object thread to true.
+There are two common methods check it interrupt flag.
+Checks the flag without clearing it. used method is Interrupted of object thread.
+Checks the current thread's flag and clears it. used method is Interrupted of class thread.
+If a thread is blocked in methods such as sleep, wait, or join, an interrupt typically causes InterruptedException, and the interrupt status is cleared when that exception is thrown.
+When InterruptedException is thrown, the thread's interrupt status is generally cleared.
+We use Thread interrupt to request that a thread stop or respond to cancellation. 
+It is especially useful for interrupting threads that are sleeping, waiting, or performing long-running tasks. 
+The interrupt does not forcibly kill the thread. the thread should detect the interruption and exit gracefully.
+command::
+./tts.sh input.txt "180. Interrupt Flag.mp3"

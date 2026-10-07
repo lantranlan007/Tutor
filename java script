@@ -828,3 +828,14 @@ It is especially useful for interrupting threads that are sleeping, waiting, or 
 The interrupt does not forcibly kill the thread. the thread should detect the interruption and exit gracefully.
 command::
 ./tts.sh input.txt "180. Interrupt Flag.mp3"
+
+content::
+Executor is a basic interface for executing Runnable tasks. 
+ExecutorService extends Executor and provides additional features such as submitting Callable tasks, obtaining Future objects, cancelling tasks, and managing the executor's lifecycle with methods such as shutdown.
+command::
+./tts.sh input.txt "181. Executor vs ExecutorService.mp3"
+
+there are implementations of Executor Service.
+Thread Pool Executor.
+ThreadPoolExecutor manages a reusable pool of threads for normal tasks. ScheduledThreadPoolExecutor supports delayed and periodic execution. ForkJoinPool is designed for parallel divide-and-conquer tasks and uses work stealing to efficiently distribute work among threads.
+

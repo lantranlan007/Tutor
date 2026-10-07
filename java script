@@ -861,5 +861,21 @@ Fork Join Pool provides methods to see the pool status while your program is run
 command::
 ./tts.sh input.txt "183. ForkJoinPool.mp3"
 
+content::
+The Java Memory Model defines how threads interact with shared memory in Java. 
+Its main purpose is to provide rules for visibility, atomicity, and ordering of operations between threads. 
+It defines concepts such as volatile, synchronization, and happens-before relationships so that multithreaded programs behave predictably.
+Atomicity means Some operations must happen as one indivisible operation.
+For atomic operations, Java provides tools such as Atomic Integer.
+The JMM defines when one thread's actions are guaranteed to happen before another thread's actions.
+This is called the happens-before relationship.
+Happens-before is a Java Memory Model rule that defines ordering and visibility between actions. 
+If action A happens-before action B, the effects of A are guaranteed to be visible to B. 
+Common examples include volatile writes followed by reads.
+unlocking a synchronized monitor followed by locking it.
+actions before Thread start, and actions in a thread before another thread successfully returns from join.
+Using volatile, synchronized, or other synchronization mechanisms creates the required ordering and visibility guarantees.
 
+command::
+./tts.sh input.txt "184. Java Memory Model.mp3"
 

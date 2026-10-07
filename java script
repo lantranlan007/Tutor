@@ -835,7 +835,31 @@ ExecutorService extends Executor and provides additional features such as submit
 command::
 ./tts.sh input.txt "181. Executor vs ExecutorService.mp3"
 
+content::
 there are implementations of Executor Service.
-Thread Pool Executor.
-ThreadPoolExecutor manages a reusable pool of threads for normal tasks. ScheduledThreadPoolExecutor supports delayed and periodic execution. ForkJoinPool is designed for parallel divide-and-conquer tasks and uses work stealing to efficiently distribute work among threads.
+Thread Pool Executor manages a reusable pool of threads.   
+It creates a pool with a fixed number of threads.
+For example. class Executors, method new Fixed Thread Pool. argument 3. means create a pool with a fixed number of threads.
+Scheduled Thread Pool Executor supports delayed and periodic execution. 
+For example. class Executors, method new Scheduled Thread Pool. argument 3.
+After that, we can use method schedule to execute threads periodically.
+ForkJoinPool is designed for parallel divide-and-conquer tasks and uses work stealing to efficiently distribute work among threads.
+Modern Java also provides an executor that creates a virtual thread for each task.
+command::
+./tts.sh input.txt "182. What Are the Available Implementations of Executorservice in the Standard Library.mp3"
+
+content::
+invoke method accepts a Fork Join Task.
+Recursive Task and Recursive Action are two common subclasses used with Fork Join Pool.
+Recursive Task, Recursive Action gives you the compute method to define the work. 
+The task also inherits methods like fork and join from Fork Join Task.
+Recursive Task is used when we need a result.
+Recursive Action is used when we don't need a result.
+By default, ForkJoinPool uses multiple worker threads based on the number of available CPU processors.
+You can create a pool with a specific parallelism.
+Fork Join Pool provides methods to see the pool status while your program is running.
+command::
+./tts.sh input.txt "183. ForkJoinPool.mp3"
+
+
 

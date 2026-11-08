@@ -1,0 +1,45 @@
+content::
+SOLID Principles is a set of five object-oriented design principles that help us write clean, maintainable, flexible, and reusable code.
+
+First.
+
+Single Responsibility Principle.
+
+A class should have only one responsibility and one reason to change.
+
+Example.
+ EmployeeService handles employee business logic, while EmployeeRepository handles database operations.
+
+Second.
+Open and Closed Principle.
+
+A class should be open for extension but closed for modification.
+
+Example: We can add new payment methods by implementing the Payment interface without modifying existing payment logic.
+
+Third.
+Liskov Substitution Principle.
+
+A child class should be replaceable for its parent class without breaking the application.
+
+Example.
+ Any implementation of a Bird interface should behave according to its defined contract.
+
+Fourth.
+ Interface Segregation Principle.
+
+A class should not be forced to implement methods that it does not need.
+
+Example.
+ Instead of one large Worker interface, we create separate Workable and Eatable interfaces.
+
+Fifth 
+Dependency Inversion Principle.
+
+High-level modules should depend on abstractions rather than concrete implementations.
+
+Example.
+In Spring Boot, we use constructor injection and interfaces to reduce tight coupling between services and implementations.
+
+./tts.sh input.txt "pp-001. SOLID Principles.mp3”
+

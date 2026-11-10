@@ -1,0 +1,4 @@
+content::
+an annotation is metadata added to code using the at symbol.
+metadata means extra information.
+Annotations tell Java compiler, Spring Framework, or other tools how to handle your code.

@@ -55,5 +55,12 @@ Security checking.
 Transaction management.
 Performance monitoring.
 Exception handling.
-Real-world example.
+Real world example.
 Imagine you have a banking application.
+Bank Service class has transfer, withdraw, deposit methods.
+You want to log whenever these methods execute.
+Without Aspect, you might write logging code in every method.
+This creates duplicated code.
+With Spring A o p, you can move logging into an Aspect.
+Spring creates a Proxy object that intercepts method calls and executes the Aspect.
+The original BankService does not need to know about logging.

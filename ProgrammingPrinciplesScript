@@ -43,3 +43,17 @@ In Spring Boot, we use constructor injection and interfaces to reduce tight coup
 
 ./tts.sh input.txt "pp-001. SOLID Principles.mp3”
 
+
+content::
+
+Aspect Oriented Programming.
+
+An Aspect in Spring is used to handle common functionality that many methods need, without writing the same code inside every method.
+For example.
+Logging.
+Security checking.
+Transaction management.
+Performance monitoring.
+Exception handling.
+Real-world example.
+Imagine you have a banking application.
